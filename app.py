@@ -21,6 +21,9 @@ def register():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
+@app.route("/menu")
+def menu():
+    return render_template('menu.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

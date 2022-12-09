@@ -10,7 +10,7 @@
     
 <div class="heading">
     <h3>our menu</h3>
-    <p><a href="home.php">home</a> <span> / menu</span></p>
+    <p><a href="{{url_for('home_page')}}">home</a> <span> / menu</span></p>
  </div>
  
  <!-- menu section starts  -->
@@ -20,13 +20,6 @@
     <h1 class="title">latest dishes</h1>
  
     <div class="box-container">
- 
-       <?php
-          $select_products = $conn->prepare("SELECT * FROM `products`");
-          $select_products->execute();
-          if($select_products->rowCount() > 0){
-             while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
-       ?>
        <form action="" method="post" class="box">
           <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
           <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
@@ -42,12 +35,8 @@
              <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2"">
           </div>
        </form>
-       <?php
-             }
-          }else{
-             echo '<p class="empty">no products added yet!</p>';
-          }
-       ?>
+       <p class="empty">no products added yet!</p>
+          
  
     </div>
  

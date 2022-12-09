@@ -106,7 +106,7 @@ section {
    margin-top: -19px;
    width: 180px;
    height: 40px;
-   border-radius: 10;
+   border-radius: 10px;
 }
 
 .btn,
@@ -207,6 +207,7 @@ section {
    z-index: 10;
    
 }
+
 .header_top h3{
    width: 100%;
    font-family: 'Anton', sans-serif;
@@ -334,6 +335,7 @@ section {
 .hero{
    width: 100%;
    margin-bottom: 100px;
+   z-index: -3 important;
   
 }
 
@@ -344,9 +346,17 @@ section {
    gap: 2rem;
    margin-bottom: 4rem;
 }
-
+.hero .hrotext{
+   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  color: white;
+}
 .hero .slide .image {
    flex: 1 1 40rem;
+   width: 100%;
 }
 
 .hero .slide .image img {
@@ -360,13 +370,13 @@ section {
 
 .hero .slide .content span {
    font-size: 2.5rem;
-   color: var(--light-color);
+   color: var(--white);
 }
 
 .hero .slide .content h3 {
    margin: 1rem 0;
    font-size: 6rem;
-   color: var(--black);
+   color: var(--white);
    text-transform: capitalize;
 }
 
@@ -486,7 +496,7 @@ section {
 
 .products .box-container .box .name {
    font-size: 2rem;
-   color: var(--black);
+   color: var(--white);
    margin: 1rem 0;
 }
 
@@ -500,7 +510,7 @@ section {
 .products .box-container .box .flex .price {
    margin-right: auto;
    font-size: 2.5rem;
-   color: var(--black);
+   color: gray;
 }
 
 .products .box-container .box .flex .price span {

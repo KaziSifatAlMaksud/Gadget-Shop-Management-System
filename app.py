@@ -24,6 +24,9 @@ def contact():
 @app.route("/menu")
 def menu():
     return render_template('menu.html')
+@app.route("/quick_view")
+def quick_view():
+    return render_template('quick_view.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

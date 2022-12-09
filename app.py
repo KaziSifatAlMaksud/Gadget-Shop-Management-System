@@ -6,7 +6,7 @@ def home():
     return "Hello, Flasksfa!"
 
 
-@app.route("/home")
+@app.route("/landing")
 def home_page():
     return render_template('index.html')
 
@@ -22,5 +22,7 @@ def login():
 def register():
     return render_template('register.html')
 
+
 if __name__ == "__main__":
-    app.run(host="127.0.0.1",port=5005)
+    app.run(debug=True)
+ #   app.run(host="127.0.0.1",port=5005)

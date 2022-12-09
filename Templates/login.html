@@ -1,87 +1,10 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Log In</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-</head>
-<body>
-<div class="header_top">
-    <h3> - $5 FLAT RATE SHIPPING - Free Shipping Over $50  </h3>
-  </div>
-<header class="header">
-  
-  <section class="flex">
-
-     <a href="home.php" class="logo">
-        <img src="images/logo.jpg" alt="Gadget shop">
-     </a>
-     <!-- scerch from -->
-     
-     <a href="search.php"><i class="fas fa-search sea"></i></a>
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
     
-
-     <nav class="navbar">
-        <a href="{{url_for('home')}}">Home</a>
-        <a href="{{url_for('register')}}">About</a>
-        <a href="{{url_for('home')}}">Menu</a>
-        <a href="{{url_for('home')}}">Orders</a>
-        <a href="{{url_for('home')}}">Contact</a>
-     </nav>
-
-     <div class="icons">
-        <?php
-           $count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-           $count_cart_items->execute([$user_id]);
-           $total_cart_items = $count_cart_items->rowCount();
-        ?>
-        
-        <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_items; ?>)</span></a>
-        <div id="user-btn" class="fas fa-user"></div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-     </div>
-
-     <div class="profile">
-        <?php
-           $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-           $select_profile->execute([$user_id]);
-           if($select_profile->rowCount() > 0){
-              $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-        ?>
-        <p class="name"><?= $fetch_profile['name']; ?></p>
-        <div class="flex">
-           <a href="profile.php" class="btn">profile</a>
-           <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
-        </div>
-        <p class="account">
-           <a href="login.php">login</a> or
-           <a href="register.php">register</a>
-        </p> 
-        <?php
-           }else{
-        ?>
-           <p class="name">please login first!</p>
-           <a href="login.php" class="btn">login</a>
-        <?php
-         }
-        ?>
-     </div>
-
-  </section>
-
-</header>
-
-
-
-
-
-<!-- User Header end -->
-
-
 <section class="form-container">
 
    <form action="/login/" method="post">
@@ -93,6 +16,11 @@
    </form>
 
 </section>
+<!-- <script src="js/script.js"></script>   -->
+
+{% endblock %}
+
+
 
 
 
@@ -100,6 +28,3 @@
 
 
 <!-- custom js file link  -->
-<!-- <script src="js/script.js"></script>   -->
-</body>
-</html>

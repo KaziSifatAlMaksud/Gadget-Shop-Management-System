@@ -48,14 +48,14 @@
             <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
          </div>
          <p class="account">
-            <a href="login.php">login</a> or
-            <a href="register.php">register</a>
+            <a href="{{url_for('login')}}">login</a> or
+            <a href="{{url_for('register')}}">register</a>
          </p> 
          <?php
             }else{
          ?>
             <p class="name">please login first!</p>
-            <a href="login.php" class="btn">login</a>
+            <a href="{{url_for('login')}}" class="btn">login</a>
          <?php
           }
          ?>

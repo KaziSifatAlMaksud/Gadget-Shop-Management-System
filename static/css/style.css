@@ -391,13 +391,15 @@ section {
 .category .box-container .box img {
    width: 100%;
    height: 10rem;
-   object-fit: contain;
+    object-fit: contain; 
+    filter: invert(1);
+   
 }
 
 .category .box-container .box h3 {
    font-size: 2rem;
    margin-top: 1.5rem;
-   color: var(--black);
+   color: var(--white);
    text-transform: capitalize;
 }
 .category .box-container .box:hover{
@@ -406,6 +408,7 @@ section {
 
 .category .box-container .box:hover img {
    filter: invert(1);
+ 
 }
 
 .category .box-container .box:hover h3 {
@@ -696,6 +699,7 @@ section {
 .steps .box-container .box img {
    height: 15rem;
    width: 100%;
+   color: #fff;
    object-fit: contain;
    margin-bottom: 1rem;
 }
@@ -884,7 +888,7 @@ section {
 }
 
 .checkout form .user-info p span {
-   color: var(--black);
+   color: var(--white);
 }
 
 .checkout form .user-info .box {
@@ -953,7 +957,10 @@ section {
 .form-container form p a {
    color: gray;
 }
-.form-container form input{
+.form-container form input {
+   background-color: var(--f-color);
+}
+.form-container form textarea {
    background-color: var(--f-color);
 }
 .form-container form p a:hover {
@@ -981,7 +988,7 @@ section {
 }
 
 .user-details .user p span {
-   color: var(--black);
+   color: var(--white);
 }
 
 .user-details .user p i {

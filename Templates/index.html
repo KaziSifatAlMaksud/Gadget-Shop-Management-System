@@ -2,12 +2,9 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+   
 {% endblock %}
 {% block content %}
-{{ super() }} 
 <!-- showcase area -->
 
    <section class="hero">
@@ -88,7 +85,7 @@
             <h3>Smart Phones</h3>
          </a>
          <a href="category.php?category=Coffee" class="box">
-            <img src="{{url_for('static', filename='images/s_labptop.svg')}}" alt=""> 
+            <img class= "imstyle"src="{{url_for('static', filename='images/s_labptop.svg')}}" alt=""> 
             <h3>Laptops</h3>
          </a>
 

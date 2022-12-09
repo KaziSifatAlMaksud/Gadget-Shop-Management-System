@@ -42,7 +42,7 @@
       </div>
 
       <div class="profile">
-         <p class="name"><?= $fetch_profile['name']; ?></p>
+         <p class="name"></p>
          <div class="flex">
             <a href="profile.php" class="btn">profile</a>
             <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
@@ -126,4 +126,5 @@
         {% endblock %}
     </footer>
 </body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>

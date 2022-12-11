@@ -640,6 +640,7 @@ section {
    background-color: var(--f-color);
    margin-top: 30px;
    border-radius: 2.5%;
+   margin-bottom: 30px;
 }
 .card img {
    height: 400px;
@@ -672,11 +673,15 @@ section {
 }
 
 
-
+.team .box{
+   padding: 20px;
+}
 .team .box img {
    height: 300px;
    width: 300px;
   border-radius: 10%;
+  
+  
 }
 
 

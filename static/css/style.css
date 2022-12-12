@@ -413,7 +413,8 @@ section {
    text-transform: capitalize;
 }
 .category .box-container .box:hover{
-   background-color: black;
+   background-color: var(--f-color);
+   border-radius: 10%;
 }
 
 .category .box-container .box:hover img {

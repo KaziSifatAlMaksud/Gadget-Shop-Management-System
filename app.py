@@ -14,12 +14,12 @@ def home_page():
 def about_page():
     return render_template('about.html')
 
-@app.route('/login', methods=["GET","POST"])
+@app.route('/login',methods=["GET","POST"])
 def login():
     if request.method == "POST":
         form_data = request.form
         username = form_data["email"]
-        password = form_data["password"]
+        password = form_data["pass"]
         print(username)
         print(password)
         for x in mycol.find({"email": username},{"re_pass": password}):

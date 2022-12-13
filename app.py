@@ -1,6 +1,10 @@
-from flask import Flask,render_template
+from flask import Flask, render_template, request, url_for, redirect, session
+import pymongo
 app = Flask(__name__)
 
+myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
+mydb = myClined["gShop"]
+mycol = mydb["user"]
 
 @app.route("/")
 def home_page():
@@ -10,13 +14,39 @@ def home_page():
 def about_page():
     return render_template('about.html')
 
-@app.route("/login")
+@app.route('/login', methods=["GET","POST"])
 def login():
-    return render_template('login.html')
+    if request.method == "POST":
+        form_data = request.form
+        username = form_data["email"]
+        password = form_data["password"]
+        print(username)
+        print(password)
+        for x in mycol.find({"email": username},{"re_pass": password}):
 
-@app.route("/register")
+            return "hellow sifat"
+
+    return render_template("login.html", **locals())
+
+
+@app.route("/register",methods=["GET","POST"])
 def register():
-    return render_template('register.html')
+    user_d = {}
+    if request.method == "POST":
+        form_data = request.form
+        user_name = form_data["name"]
+        user_email = form_data["email"]
+        user_mobile = form_data["mobile"]
+        user_pass = form_data["password1"]
+        user_re_pass = form_data["password2"]
+        user_d["name"] = user_name
+        user_d["email"] = user_email
+        user_d["mobile"] = user_mobile
+        user_d["pass"] = user_pass
+        user_d["re_pass"] = user_re_pass
+        mycol.insert_one(user_d)
+        return render_template("login.html", **locals())
+    return render_template('register.html',**locals())
 
 @app.route("/contact")
 def contact():

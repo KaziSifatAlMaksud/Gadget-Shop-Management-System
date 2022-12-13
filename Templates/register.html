@@ -9,11 +9,11 @@
    <form action="/register" method="post">
       <h3>register now</h3>
       <input type="text" name="name" required placeholder="Enter Your Name" class="box" maxlength="50">
-      <input type="email" name="email" required placeholder="Enter Your Email" class="box" maxlength="50" ">
-      <input type="number" name="number" required placeholder="Enter Your Number" class="box" min="0" max="9999999999" maxlength="10">
-      <input type="password" name="pass" required placeholder="Enter Your Password" class="box" maxlength="50" >
-      <input type="password" name="cpass" required placeholder="Confirm Your Password" class="box" maxlength="50">
-      <input type="submit" value="register now" name="submit" class="btn">
+      <input type="email" name="email" required placeholder="Enter Your Email" class="box" maxlength="50">
+      <input type="number" name="mobile" required placeholder="Enter Your Number" class="box" min="0" max="9999999999" maxlength="10">
+      <input type="password" name="password1" required placeholder="Enter Your Password" class="box" maxlength="50" >
+      <input type="password" name="password2" required placeholder="Confirm Your Password" class="box" maxlength="50">
+      <button type="submit" name="submit" class="btn">Register now</button>
       <p>already have an account? <a href="{{url_for('login')}}">login now</a></p>
    </form>
 

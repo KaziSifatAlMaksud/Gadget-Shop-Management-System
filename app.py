@@ -5,6 +5,7 @@ app = Flask(__name__)
 myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
+shopProduct = mydb["product"]
 
 @app.route("/")
 def home_page():
@@ -22,10 +23,10 @@ def login():
         password = form_data["pass"]
         print(username)
         print(password)
-        for x in mycol.find({"email": username},{"re_pass": password}):
-
-            return "hellow sifat"
-
+        for x in mycol.find({"email": username}):
+            for y in mycol.find({"re_pass": password}):
+                return "hellow sifat"
+        return "plase Sing Up"
     return render_template("login.html", **locals())
 
 

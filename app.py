@@ -6,7 +6,6 @@ myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
 shopProduct = mydb["product"]
-
 @app.route("/")
 def home_page():
     return render_template('index.html')
@@ -21,12 +20,14 @@ def login():
         form_data = request.form
         username = form_data["email"]
         password = form_data["pass"]
-        print(username)
-        print(password)
+
         for x in mycol.find({"email": username}):
             for y in mycol.find({"re_pass": password}):
-                return "hellow sifat"
-        return "plase Sing Up"
+                logprofile = True
+                message = f"Hello,{username}"
+                print(message)
+                return render_template("index.html ",**locals())
+        message = "Username or password is incorrect"
     return render_template("login.html", **locals())
 
 
@@ -46,7 +47,8 @@ def register():
         user_d["pass"] = user_pass
         user_d["re_pass"] = user_re_pass
         mycol.insert_one(user_d)
-        return render_template("login.html", **locals())
+        sucess_mess = "Register Successfully"
+        #return render_template("login.html", **locals())
     return render_template('register.html',**locals())
 
 @app.route("/contact")

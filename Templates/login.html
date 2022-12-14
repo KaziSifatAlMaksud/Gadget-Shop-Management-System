@@ -11,6 +11,7 @@
       <h3>login now</h3>
       <input type="email" name="email" required placeholder="Enter Your Email" class="box" maxlength="50">
       <input type="password" name="pass" required placeholder="Enter Your Password" class="box" maxlength="50">
+       <p style="color:darkred";>{{ message }}</p>
        <button type="submit" class="btn">Login Now</button>
       <p>don't have an account? <a href="{{url_for('register')}}">register now</a></p>
    </form>

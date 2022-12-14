@@ -8,6 +8,7 @@
 
    <form action="/register" method="post">
       <h3>register now</h3>
+       <p style="color: darkgreen">{{ sucess_mess }}</p>
       <input type="text" name="name" required placeholder="Enter Your Name" class="box" maxlength="50">
       <input type="email" name="email" required placeholder="Enter Your Email" class="box" maxlength="50">
       <input type="number" name="mobile" required placeholder="Enter Your Number" class="box" min="0" max="9999999999" maxlength="10">

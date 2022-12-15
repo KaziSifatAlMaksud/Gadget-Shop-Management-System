@@ -285,17 +285,13 @@ section {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: #fff;
-    color: black;
-    padding-top: 150px;
-    padding-bottom: 50px;
-    height: 50vh;
+    background-color: var(--bg-color);
+    color: var(--white);
+    height: 20vh;
   }
   .giveaway {
     gap: 2rem;
     font-size: 2rem;
-     padding-bottom: 20px;
-font-family: 'Oswald', sans-serif;
   }
   .doc-card h4{
       padding-left: 20px;
@@ -309,11 +305,8 @@ font-family: 'Oswald', sans-serif;
     text-align: center;
     gap: 2rem;
     font-size: 2rem;
-    padding-top:20px;
 }
-.deadline-format{
-padding-top:50px;
-}
+
 
 /* comedown clock end*/
 @keyframes fadeIn {
@@ -345,7 +338,6 @@ padding-top:50px;
 .hero{
    width: 100%;
    margin-bottom: 100px;
-   z-index: -3 important;
   
 }
 

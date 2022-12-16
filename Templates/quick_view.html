@@ -2,43 +2,59 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+
 {% endblock %}
 {% block content %}
-    
+
  <section class="quick-view">
 
     <h1 class="title">quick view</h1>
- 
-    <?php
-       $pid = $_GET['pid'];
-       $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-       $select_products->execute([$pid]);
-       if($select_products->rowCount() > 0){
-          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){
-    ?>
-    <form action="" method="post" class="box">
-       <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
-       <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
-       <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
-       <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-       <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="">
-       <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
-       <div class="name"><?= $fetch_products['name']; ?></div>
+   <!-- <form type="hidden" action="" method="post" >
+       <input type="hidden" name="pid" value="">
+       <input type="hidden" name="name" value="">
+       <input type="hidden" name="price" value="">
+       <input type="hidden" name="image" value="">
+    </form>
+    -->
+    <section class="card">
+
+      <img src="{{url_for('static', filename='images/macbook.jpg')}}" class="card-img" alt="...">
+
+    <div class="doc">
+      <h1 class="name">MacBook Air With M1 Chip</h1>
+        <p> Form $999 or $83.25/mo ~ for 12 mon*</p>
+        <br>
+        <p><b>Details</b>  Offers  History</p>
+
+         <ol>
+            <li>Apple M1 chip delivers powerful CPU, GPU, andmachine learning performance.</li>
+            <li>Up to 18 hours of battery life so you can go longer than everFootnote1 </li>
+            <li>Up to 18 hours of battery life so you can go longer than everFootnote1</li>
+            <li>Fanless design for silent operation</li>
+         </ol>
+
+        <br>
+        <br>
+       <a href="#" class="cat"></a>
+
        <div class="flex">
-          <div class="price"><span>$</span><?= $fetch_products['price']; ?></div>
+          <div class="price"><span>$</span>9999</div>
           <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
        </div>
-       <button type="submit" name="add_to_cart" class="cart-btn">add to cart</button>
-    </form>
-    <?php
-          }
-       }else{
-          echo '<p class="empty">no products added yet!</p>';
-       }
-    ?>
+       <a type="submit" class="btn">add to cart</a>
+
+        <a href="#" target="_blank" class="btn">Buy Now</a>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
  
  </section>
  

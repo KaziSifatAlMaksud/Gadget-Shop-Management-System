@@ -69,60 +69,79 @@
     <div id="content">{% block content %}{% endblock %}</div>
     <footer id="footer" class="footer">
         {% block footer %}
-        <section class="grid">
+         <section class="grid">
 
-            <div class="box">
-         
-                     <h3>quick links</h3>
-         
-                  <a href="home.php"> Home </a>
-                  <a href="menu.php"> Menu </a>
-                  <a href="orders.php"> Order </a>
-                  <a href="about.php"> About </a>
+            <div class="box" >
+
+                     <h3 style="color: gray;">quick links</h3>
+
+                  <a href="#"> Home </a>
+                  <a href="#"> Menu </a>
+                  <a href="#"> Order </a>
+                  <a href="#"> About </a>
                </div>
-         
+
                <div class="box">
-               <h3> Cofe Shop <i class="fas fa-shopping-basket"></i> </h3>
-                  <div class="share">
+               <h3 style="color: gray;"> Connect</h3>
+                  <div class="share" style="margin-bottom: 25px;">
                      <a href="#" class="fab fa-facebook-f"></a>
                      <a href="#" class="fab fa-twitter"></a>
                      <a href="#" class="fab fa-instagram"></a>
                      <a href="#" class="fab fa-linkedin"></a>
                   </div>
-               </div>
-         
+
+                  <div class ="phone1">
+
+
+                  </div>
+                   <h3 style="color: gray;">Payment Methods</h3>
+                        <div style="display:flex;flex-direction: row; margin: 10%  0% 5% 5%;">
+                            <img src="{{url_for('static', filename='images/1_pay.png')}}" style="width: 80px;height:30px;"  alt="...">
+                            <img src="{{url_for('static', filename='images/2_pay.png')}}" style="width: 80px;height:30px;" alt="...">
+                            <img src="{{url_for('static', filename='images/3_pay.png')}}" style="width: 80px;height:30px;" alt="...">
+                        </div>
+                        <div  style="display:flex;flex-direction: row; margin: 0%  0% 5% 5%;">
+                            <img src="{{url_for('static', filename='images/1_pay.png')}}" style="width: 80px;height:30px;" alt="...">
+                            <img src="{{url_for('static', filename='images/3_pay.png')}}" style="width: 80px;height:30px;" alt="...">
+                            <img src="{{url_for('static', filename='images/3_pay.png')}}" style="width: 80px;height:30px;" alt="...">
+                        </div>
+
+
+                  </div>
+
+
+
+
                <div class="box">
-               
-                  <h3>Opening Hours</h3>
-                  <div class="dateinfo"> <p>MONDAY  </p> <samp>CLOSED</samp> </div>
-                  <div class="dateinfo">  <p>TUESDAY </p> <samp>9.00 - 22.00</samp></div>
-                  <div class="dateinfo"> <p>WEDNESDAY  </p><samp>9.00 - 22.00</samp> </div>
-                  <div class="dateinfo"> <p>THURSDAY  </p><samp>9.00 - 22.00</samp> </div>
-                  <div class="dateinfo"> <p>FRIDAY  </p> <samp>9.00 - 22.00</samp> </div>
-                  <div class="dateinfo">  <p>SATURDAY  </p> <samp>9.00 - 22.00</samp> </div>
-                  <div class="dateinfo">  <p>SUNDAY </p><samp>*10.00 - 20.00</samp> </div>
-                 
-                 
+
+                  <h3 style="color: gray;">Accessories</h3>
+                  <a href="#"> Smart phone </a>
+                  <a href="#"> Laptop</a>
+                  <a href="#">Desktops </a>
+                  <a href="#"> Routers </a>
+
+
+
                </div>
-         
+
                <div class="box">
-                  <h3>contact info</h3>
+                  <h3 style="color: gray;">contact info</h3>
                   <div class="phone">
                   <p> <i class="fas fa-phone"></i> +88015 0000 0000 </p>
                   <p> <i class="fas fa-phone"></i> +88017 0000 0000 </a>
-                  <p> <i class="fas fa-envelope"></i> cafe.shop@gmail.com </p>
+                  <p> <i class="fas fa-envelope"></i> gadget.shop@gmail.com </p>
                   </div>
-              
+
                   <div class ="phone1">
-                  <h3>Head Office</h3>
-                 
+                  <h3 style="color: gray;">Branch Location</h3>
+
                   <p> <i class="fas fa-map-marker-alt"></i> Jahurul Islam City Gate, A/2 Jahurul Islam Ave, Dhaka 1212 </p>
-                  <p> <i class="fas fa-envelope"></i> cafe.shop@gmail.com </p>
+                  <p> <i class="fas fa-envelope"></i>gadget.shop@gmail.com</p>
                   </div>
-                 </div>       
+                 </div>
             </section>
-         
-            <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span></span> | <a>Fall-2022 CSE412(2)  (Group:1)</a> | all rights reserved!</div>
+
+            <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span></span> | <a>Fall-2022 CSE479(1)  (Kazi Sifat Al Maksud)</a> | all rights reserved!</div>
          
         {% endblock %}
     </footer>

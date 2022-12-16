@@ -17,7 +17,7 @@
                <div class="content hrotext">
                   <span>order online</span>
                   <h3>Which Mac is right for you?</h3>
-                  <a href="menu.html" class="btn">see menus</a>
+                  <a href="{{url_for('home_page')}}" class="btn">see menus</a>
                </div>
                <div class="image">
                   <img src="{{url_for('static', filename='images/bg_hero_1.jpg')}}" alt="">
@@ -29,7 +29,7 @@
                <div class="content hrotext">
                   <span>order online</span>
                   <h3>Love the power.Love the price.</h3>
-                  <a href="menu.html" class="btn">see menus</a>
+                  <a href="{{url_for('home_page')}}" class="btn">see menus</a>
                </div>
                <div class="image">
                   <img src="{{url_for('static', filename='images/bg_hero_2.jpg')}}" alt="">
@@ -42,7 +42,7 @@
                <div class="content hrotext">
                   <span>order online</span>
                   <h3>Heavy on features. Light on Price</h3>
-                  <a href="menu.html" class="btn">see menus</a>
+                  <a href="{{url_for('home_page')}}" class="btn">see menus</a>
                </div>
                <div class="image">
                   <img src="{{url_for('static', filename='images/bg_hero_3.jpg')}}" alt="">
@@ -53,7 +53,7 @@
                <div class="content hrotext">
                   <span>order online</span>
                   <h3>How do I ture then off ?</h3>
-                  <a href="menu.html" class="btn">see menus</a>
+                  <a href="{{url_for('home_page')}}" class="btn">see menus</a>
                </div>
                <div class="image">
                   <img src="{{url_for('static', filename='images/bg_hero_4.png')}}" alt="">
@@ -68,6 +68,7 @@
 
    </section>
   <!-- Comedown lock -->
+     <h1 class="title">Ending In</h1>
      <div class="slider2">
     <div class="gift-info">
       <p class="giveaway"></p>
@@ -165,77 +166,20 @@
                      <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
                   </div>
                </form>
-       <!-- <p class="empty">no products added yet!</p> -->
+
          
       </div>
 
       <div class="more-btn">
-         <a href="menu.html" class="btn">veiw all</a>
+         <a href="{{url_for('home_page')}}" class="btn">veiw all</a>
       </div>
 
    </section>
 
-
-
-
-
-
-
-   <!-- about section starts  -->
-
-   <section class="about">
-
-      <div class="row">
-
-         <div class="image">
-            <img src="images/whychoose.jpg" alt="">
-         </div>
-
-         <div class="content">
-            <h3>why choose us?</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, neque debitis incidunt qui ipsum sed doloremque a molestiae in veritatis ullam similique sunt aliquam dolores dolore? Quasi atque debitis nobis!</p>
-            <a href="menu.html" class="btn">our menu</a>
-         </div>
-
-      </div>
-
-   </section>
-
-   <!-- about section ends -->
-
-   <!-- steps section starts  -->
-
-   <section class="steps">
-
-      <h1 class="title">simple steps</h1>
-
-      <div class="box-container">
-
-         <div class="box">
-            <img src="images/step-1.png" alt="">
-            <h3>choose order</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
-         </div>
-
-         <div class="box">
-            <img src="images/step-2.png" alt="">
-            <h3>fast delivery</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
-         </div>
-
-         <div class="box">
-            <img src="images/step-3.png" alt="">
-            <h3>enjoy food</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, dolorem.</p>
-         </div>
-
-      </div>
-
-   </section>
     <!-- For News Letter -->
    <section class="subscribe">
    <h1 class="title">For News Letter</h1>
-         <p>Subscribe For Latest Updates</p>
+         <p style="color: grey;">Subscribe For Latest Updates</p>
          <input type="email" placeholder="Enter Your Email" class="email">
          <input type="submit" value="subscribe" class="btn">
    </section>
@@ -252,7 +196,7 @@
          </div>
 
    <form class="form-container" action=""  method="post">
-      <h3>Contact Us !</h3>
+      <h3 style="color: grey;">Contact Us !</h3>
       <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Your Name" required>
       <input type="email" name="email" maxlength="50" class="box" placeholder="Enter Your Email" required>
       <textarea name="msg" class="box" required placeholder="Enter Your Message" maxlength="500" cols="30" rows="10"></textarea>

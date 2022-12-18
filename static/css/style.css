@@ -223,6 +223,7 @@ section {
    align-items: center;
    justify-content: space-between;
    position: relative;
+   z-index: 35;
 }
 
 
@@ -264,7 +265,7 @@ section {
 }
 
 .header .flex .profile {
-   background-color: var(--white);
+   background-color: #2a2d3a;
    border: var(--border);
    padding: 1.5rem;
    text-align: center;
@@ -274,6 +275,7 @@ section {
    width: 30rem;
    display: none;
    animation: fadeIn .2s linear;
+   z-index: 35;
 }
 
 .header .flex .profile.active {

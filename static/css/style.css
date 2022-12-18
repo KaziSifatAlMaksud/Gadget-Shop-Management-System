@@ -646,8 +646,8 @@ section {
    margin-bottom: 30px;
 }
 .card img {
-   height: 400px;
-   width: 400px;
+   height: 300px;
+   width: 300px;
    border-radius: 10%;
 }
 .card .doc{
@@ -666,7 +666,100 @@ section {
 
 
 }
+/* 2nd nabigation ber*/
 
+
+ .logo {
+   color: var(--white);
+   font-size: 30px;
+ }
+
+
+ .menu-bar {
+   position: relative;
+   height: 40px;
+   top: 0;
+   width: 100%;
+   background-color: var(--black);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 5%;
+   z-index: 50;
+
+ }
+
+ .menu-bar ul {
+   list-style: none;
+   display: flex;
+ }
+
+ .menu-bar ul li {
+   /* width: 120px; */
+   padding: 10px 30px;
+   /* text-align: center; */
+
+   position: relative;
+ }
+
+ .menu-bar ul li a {
+   font-size: 20px;
+   color: var(--white);
+   text-decoration: none;
+   transition: all 0.3s;
+ }
+
+ .menu-bar ul li a:hover {
+   color: var(--color-primary);
+ }
+
+  .menu-bar.fas {
+   float: right;
+   margin-left: 10px;
+   padding-top: 3px;
+ }
+
+ /* dropdown menu style */
+ .dropdown-menu {
+   display: none;
+
+ }
+
+ .menu-bar ul li:hover .dropdown-menu {
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 100%;
+   background-color: var(--black);
+ }
+
+ .menu-bar ul li:hover .dropdown-menu ul {
+   display: block;
+   margin: 10px;
+ }
+
+ .menu-bar ul li:hover .dropdown-menu ul li {
+   width: 150px;
+   padding: 10px;
+ }
+
+ .dropdown-menu-1 {
+   display: none;
+ }
+
+ .dropdown-menu ul li:hover .dropdown-menu-1 {
+   display: block;
+   position: absolute;
+   left: 150px;
+   top: 0;
+   background-color: var(--black);
+ }
+ .sticky {
+   position: fixed;
+   top: 0;
+   width: 100%;
+ }
+ /*2nd nabigation ber end */
 /* team in about page */
 
 .team .swiper-wrapper{
@@ -680,8 +773,8 @@ section {
    padding: 20px;
 }
 .team .box img {
-   height: 300px;
-   width: 300px;
+   height: 100px;
+   width: 100px;
   border-radius: 10%;
   
   

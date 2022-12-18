@@ -32,3 +32,20 @@ document.querySelectorAll('input[type="number"]').forEach(numberInput => {
       if(numberInput.value.length > numberInput.maxLength) numberInput.value = numberInput.value.slice(0, numberInput.maxLength);
    };
 });
+
+
+/* 2nd nabigation ber */
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("menu-bar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+/*2nd nabigation ber end*/
+
+

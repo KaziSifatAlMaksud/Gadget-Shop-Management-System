@@ -11,10 +11,7 @@
  </div>
  
 <!-- menu section starts  -->
-
- <section >
-
-
+ <section>
      <!-- Shop Start -->
      <div class="container-fluid">
 
@@ -148,7 +145,7 @@
                                     <input type="text" placeholder="Search by name">
                                     <div >
                                         <span>
-                                            <i class="fa fa-search"></i>
+                                            <i class="fa1 fa-search"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -178,7 +175,7 @@
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                   <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
                   <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                  <img  src="macbook.jpg'" alt="">
+                  <img  src="{{url_for('static', filename='images/macbook.jpg')}}" alt="">
                   <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
                   <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
                   <div class="flex">
@@ -193,7 +190,7 @@
                 <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                 <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
                 <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                <img  src="macbook.jpg'" alt="">
+                <img  src="{{url_for('static', filename='images/macbook.jpg')}}" alt="">
                 <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
                 <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
                 <div class="flex">
@@ -208,7 +205,7 @@
                 <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                 <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
                 <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                <img  src="macbook.jpg'" alt="">
+                <img  src="{{url_for('static', filename='images/macbook.jpg')}}" alt="">
                 <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
                 <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
                 <div class="flex">
@@ -239,21 +236,7 @@
 
  </section>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
  <!-- custom js file link  -->
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="js/script"></script>
  
 {% endblock %}

@@ -153,12 +153,6 @@ section {
 
 /* Addisonal manu bar: */
 
-.logo {
-   color: var(--color-white);
-   font-size: 30px;
- }
-
-
  .menu-bar {
    position: relative;
    height: 40px;
@@ -188,16 +182,16 @@ section {
 
  .menu-bar ul li a {
    font-size: 20px;
-   color: var(--color-white);
+   color: var(--white);
    text-decoration: none;
    transition: all 0.3s;
  }
 
  .menu-bar ul li a:hover {
-   color: var(--color-primary);
+   color: gray;
  }
 
- .fas {
+ .fa {
    float: right;
    margin-left: 10px;
    padding-top: 3px;
@@ -214,7 +208,7 @@ section {
    position: absolute;
    left: 0;
    top: 100%;
-   background-color: var(--color-black);
+   background-color: var(--black);
  }
 
  .menu-bar ul li:hover .dropdown-menu ul {
@@ -236,7 +230,7 @@ section {
    position: absolute;
    left: 150px;
    top: 0;
-   background-color: var(--color-black);
+   background-color: var(--black);
  }
  .sticky {
    position: fixed;
@@ -534,6 +528,7 @@ section {
 }
 .hero{
    width: 100%;
+    margin-top: 150px;
    margin-bottom: 100px;
    z-index: -3 important;
 
@@ -583,7 +578,7 @@ section {
 .swiper-pagination-bullet-active {
    background-color: black;
 }
-.box-container{
+.products.box-container{
    width: 100%;
    margin-left: 50px;
    position: relative;
@@ -630,9 +625,7 @@ section {
 .category .box-container .box:hover h3 {
    color: var(--white);
 }
-.products{
-   margin-top: 50px;
-}
+
 
 .products .box-container {
    display: grid;

@@ -13,7 +13,7 @@
 }
 
 * {
-   
+
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -50,6 +50,58 @@ html {
    color: var(--white);
    /*font-family:'Aboreto', cursive;*/
 }
+/*shop start css*/
+
+.container-fluid{
+   position: absolute;
+   z-index: 3;
+   width: 100%;
+}
+
+.container-fluid .top_filter {
+   display: flex;
+   flex-direction: row;
+}
+.filter_block{
+      position: relative;
+      margin-left: -80px;
+      background-color: var(--f-color);
+      max-width: 25rem;
+      padding: .5rem;
+      border-radius: 2%;
+      font-size: large;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: small;
+      padding-bottom: 15px;
+
+   }
+   .filter_block .title{
+      font-size: 20px;
+      margin-bottom: 3px;
+      left: 0;
+
+   }
+   .filter_block .menu_chack{
+      display: flex;
+      font-size: 15px;
+      margin-left: 20px;
+      width: 100%;
+
+   }
+   .container-fluid .search_bar{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 20px;
+
+
+   }
+   .sort_tab{
+      margin-left: 50%;
+   }
+
+/* shop end css*/
 
 section {
    margin: 0 auto;
@@ -66,6 +118,104 @@ section {
    /*text-decoration: underline;*/
    text-underline-offset: 1rem;
 }
+
+
+
+
+/* Addisonal manu bar: */
+
+.logo {
+   color: var(--color-white);
+   font-size: 30px;
+ }
+
+
+ .menu-bar {
+   position: relative;
+   height: 40px;
+   top: 0;
+   width: 100%;
+   background-color: var(--black);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 5%;
+   z-index: 50;
+
+ }
+
+ .menu-bar ul {
+   list-style: none;
+   display: flex;
+ }
+
+ .menu-bar ul li {
+   /* width: 120px; */
+   padding: 10px 30px;
+   /* text-align: center; */
+
+   position: relative;
+ }
+
+ .menu-bar ul li a {
+   font-size: 20px;
+   color: var(--color-white);
+   text-decoration: none;
+   transition: all 0.3s;
+ }
+
+ .menu-bar ul li a:hover {
+   color: var(--color-primary);
+ }
+
+ .fas {
+   float: right;
+   margin-left: 10px;
+   padding-top: 3px;
+ }
+
+ /* dropdown menu style */
+ .dropdown-menu {
+   display: none;
+
+ }
+
+ .menu-bar ul li:hover .dropdown-menu {
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 100%;
+   background-color: var(--color-black);
+ }
+
+ .menu-bar ul li:hover .dropdown-menu ul {
+   display: block;
+   margin: 10px;
+ }
+
+ .menu-bar ul li:hover .dropdown-menu ul li {
+   width: 150px;
+   padding: 10px;
+ }
+
+ .dropdown-menu-1 {
+   display: none;
+ }
+
+ .dropdown-menu ul li:hover .dropdown-menu-1 {
+   display: block;
+   position: absolute;
+   left: 150px;
+   top: 0;
+   background-color: var(--color-black);
+ }
+ .sticky {
+   position: fixed;
+   top: 0;
+   width: 100%;
+ }
+
+/* end addisional manu bar*/
 
 .heading {
    display: flex;
@@ -98,7 +248,7 @@ section {
    padding-bottom: 4px;
    text-decoration: underline;
    color: aquamarine;
-   
+
 }
 .logo img{
    position: absolute;
@@ -135,6 +285,7 @@ section {
 .delete-btn:hover {
    letter-spacing: .2rem;
 }
+
 
 .disabled {
    opacity: .5;
@@ -184,28 +335,48 @@ section {
    display: flex;
    gap: 1rem;
 }
-
+#navbar23 {
+   overflow: hidden;
+   background-color: #333;
+ }
+ #navbar23 a {
+   float: left;
+   display: block;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
+ .sticky {
+   position: fixed;
+   top: 0;
+   width: 100%;
+ }
+ .sticky + .content {
+   padding-top: 60px;
+ }
 .header {
-   position: static;
+   position: absolute;
+   width: 100%;
    top: 0;
    left: 0;
    right: 0;
    z-index: 1000;
-   width: 100%!important;
    border-bottom: .5px solid gray;
-   background-color: #2D2E36; 
+   background-color: #2D2E36;
 
-   
+
 
 }
 .header_top{
    background-color: var(--black);
-   width: 100%;   
+   width: 100%;
    letter-spacing: .3rem;
    height: 60px;
    color: var(--white);
    z-index: 10;
-   
+
 }
 
 .header_top h3{
@@ -223,7 +394,6 @@ section {
    align-items: center;
    justify-content: space-between;
    position: relative;
-   z-index: 35;
 }
 
 
@@ -231,7 +401,7 @@ section {
    font-size: 1.5rem;
    color: var(--white);
    margin: 0 1rem;
-   
+
 }
 
 .header .flex .navbar a:hover {
@@ -265,7 +435,7 @@ section {
 }
 
 .header .flex .profile {
-   background-color: #2a2d3a;
+   background-color: var(--white);
    border: var(--border);
    padding: 1.5rem;
    text-align: center;
@@ -275,42 +445,38 @@ section {
    width: 30rem;
    display: none;
    animation: fadeIn .2s linear;
-   z-index: 35;
 }
 
 .header .flex .profile.active {
    display: inline-block;
 }
-/* comedown clock */
+/* booking Area */
+.booking{
+   width: 100%;
+   margin: 0;
+   margin-bottom: 80px;
+   margin-left: 20%;
 
-  .slider2{
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background-color: var(--bg-color);
-    color: var(--white);
-    height: 20vh;
-  }
-  .giveaway {
-    gap: 2rem;
-    font-size: 2rem;
-  }
-  .doc-card h4{
-      padding-left: 20px;
-  }
+   align-items: center;
+   justify-content: center;
+   background-color:#f5f5f5;
 
-  .deadline{
-     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    gap: 2rem;
-    font-size: 2rem;
 }
-
-
-/* comedown clock end*/
+.booking .title{
+   text-align: center;
+   justify-content: center;
+}
+.booking .bookinput{
+   text-align: center;
+   align-items: center;
+   display: flex;
+   font-size: 2rem;
+}
+.booking .bookinput input{
+   font-size: 2rem;
+   border-bottom: 1px solid black;
+   margin: 30px;
+}
 @keyframes fadeIn {
    0% {
       transform: translateY(1rem);
@@ -340,7 +506,8 @@ section {
 .hero{
    width: 100%;
    margin-bottom: 100px;
-  
+   z-index: -3 important;
+
 }
 
 .hero .slide {
@@ -355,7 +522,7 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
   color: white;
 }
 .hero .slide .image {
@@ -387,6 +554,11 @@ section {
 .swiper-pagination-bullet-active {
    background-color: black;
 }
+.box-container{
+   width: 100%;
+   margin-left: 50px;
+   position: relative;
+}
 
 .category .box-container {
    width: 100%;
@@ -405,9 +577,9 @@ section {
 .category .box-container .box img {
    width: 100%;
    height: 10rem;
-    object-fit: contain; 
+    object-fit: contain;
     filter: invert(1);
-   
+
 }
 
 .category .box-container .box h3 {
@@ -423,11 +595,14 @@ section {
 
 .category .box-container .box:hover img {
    filter: invert(1);
- 
+
 }
 
 .category .box-container .box:hover h3 {
    color: var(--white);
+}
+.products{
+   margin-top: 50px;
 }
 
 .products .box-container {
@@ -638,6 +813,9 @@ section {
    font-size: 1.6rem;
    color: var(--light-color);
 }
+/*shop manu*/
+
+/*shoping end */
 /* card in about page*/
 .card{
    display: flex;
@@ -648,8 +826,8 @@ section {
    margin-bottom: 30px;
 }
 .card img {
-   height: 300px;
-   width: 300px;
+   height: 400px;
+   width: 400px;
    border-radius: 10%;
 }
 .card .doc{
@@ -668,106 +846,13 @@ section {
 
 
 }
-/* 2nd nabigation ber*/
 
-
- .logo {
-   color: var(--white);
-   font-size: 30px;
- }
-
-
- .menu-bar {
-   position: relative;
-   height: 40px;
-   top: 0;
-   width: 100%;
-   background-color: var(--black);
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 5%;
-   z-index: 50;
-
- }
-
- .menu-bar ul {
-   list-style: none;
-   display: flex;
- }
-
- .menu-bar ul li {
-   /* width: 120px; */
-   padding: 10px 30px;
-   /* text-align: center; */
-
-   position: relative;
- }
-
- .menu-bar ul li a {
-   font-size: 20px;
-   color: var(--white);
-   text-decoration: none;
-   transition: all 0.3s;
- }
-
- .menu-bar ul li a:hover {
-   color: var(--color-primary);
- }
-
-  .menu-bar.fas {
-   float: right;
-   margin-left: 10px;
-   padding-top: 3px;
- }
-
- /* dropdown menu style */
- .dropdown-menu {
-   display: none;
-
- }
-
- .menu-bar ul li:hover .dropdown-menu {
-   display: block;
-   position: absolute;
-   left: 0;
-   top: 100%;
-   background-color: var(--black);
- }
-
- .menu-bar ul li:hover .dropdown-menu ul {
-   display: block;
-   margin: 10px;
- }
-
- .menu-bar ul li:hover .dropdown-menu ul li {
-   width: 150px;
-   padding: 10px;
- }
-
- .dropdown-menu-1 {
-   display: none;
- }
-
- .dropdown-menu ul li:hover .dropdown-menu-1 {
-   display: block;
-   position: absolute;
-   left: 150px;
-   top: 0;
-   background-color: var(--black);
- }
- .sticky {
-   position: fixed;
-   top: 0;
-   width: 100%;
- }
- /*2nd nabigation ber end */
 /* team in about page */
 
 .team .swiper-wrapper{
    align-items: center;
    justify-content: center;
-   
+
 }
 
 
@@ -775,11 +860,11 @@ section {
    padding: 20px;
 }
 .team .box img {
-   height: 100px;
-   width: 100px;
+   height: 300px;
+   width: 300px;
   border-radius: 10%;
-  
-  
+
+
 }
 
 
@@ -789,7 +874,7 @@ section {
 }
 .team .box h2 {
    padding: 1rem 0;
-   
+
    font-size: 2rem;
 }
 .team .box h3 {
@@ -833,7 +918,7 @@ section {
 
 .reviews .slide {
    margin-bottom: 4rem;
-   
+
    padding: 2rem;
    text-align: center;
 }
@@ -1190,7 +1275,7 @@ section {
    text-align: center;
    margin-bottom: 2.5rem;
    color: var(--black);
-  
+
    margin-top: 10rem;
 
 }
@@ -1212,7 +1297,7 @@ section {
    background-color:black;
    color: #fff;
    height: 400px;
-   
+
 }
 
 
@@ -1252,12 +1337,12 @@ section {
 }
 .footer .grid .box .share{
    display: flex;
-   
-   
+
+
 }
 .footer .grid .box .phone{
    padding-bottom: 40px;
-   
+
 }
 .footer .grid .box .phone1{
    padding-top: 20px;
@@ -1278,7 +1363,7 @@ section {
 }
 
 .footer .grid .box a:hover {
-   
+
    letter-spacing: .3rem;
 }
 .footer .grid .box .dateinfo{
@@ -1312,8 +1397,8 @@ hr{
    color: var(--white);
    font-size: 2rem;
    text-transform: capitalize;
-    padding-top: 3rem; 
-    padding-bottom: 2rem; 
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     border-top: 1px solid #fff;
 }
 
@@ -1349,7 +1434,7 @@ hr{
    html {
       font-size: 55%;
    }
-    
+
    .team .swiper-wrapper{
       align-items: center;
       width: 100%;
@@ -1374,13 +1459,13 @@ hr{
    .footer{
       height: 180vh;
    }
-   
+
    .team .swiper-wrapper{
       align-items: center;
       width: 100%;
       margin: 0;
       justify-content: space-between;
-     
+
       display: flex;
       flex-direction: column;
    }
@@ -1450,5 +1535,4 @@ hr{
       flex-flow: column;
       gap: 0;
    }
-
 }

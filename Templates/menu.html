@@ -10,12 +10,166 @@
     <p><a href="{{url_for('home_page')}}">home</a> <span> / menu</span></p>
  </div>
  
- <!-- menu section starts  -->
- 
- <section class="products">
- 
+<!-- menu section starts  -->
+
+ <section >
+
+
+     <!-- Shop Start -->
+     <div class="container-fluid">
+
+            <!-- Shop Sidebar Start -->
+            <div class="top_filter">
+                <div>
+                <!-- Price Start -->
+                <div class="filter_block">
+                    <h5 class="title">Filter by price</h5>
+                    <form>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" checked id="price-all">
+                            <label class="custom-control-label" for="price-all">All Price</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="price-1">
+                            <label class="custom-control-label" for="price-1">$0 - $100</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="price-2">
+                            <label class="custom-control-label" for="price-2">$100 - $200</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="price-3">
+                            <label class="custom-control-label" for="price-3">$200 - $300</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="price-4">
+                            <label class="custom-control-label" for="price-4">$300 - $400</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="price-5">
+                            <label class="custom-control-label" for="price-5">$400 - $500</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Price End -->
+
+                <!-- Color Start -->
+                <div class="filter_block">
+                    <h5 class="title">Filter by color</h5>
+                    <form>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" checked id="color-all">
+                            <label class="custom-control-label" for="price-all">All Color</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">Black</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="color-2">
+                            <label class="custom-control-label" for="color-2">White</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="color-3">
+                            <label class="custom-control-label" for="color-3">Red</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="color-4">
+                            <label class="custom-control-label" for="color-4">Blue</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="color-5">
+                            <label class="custom-control-label" for="color-5">Green</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Color End -->
+
+                <!-- Size Start -->
+                <div class="filter_block">
+                    <h5 class="title">Filter by size</h5>
+                    <form>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" checked id="size-all">
+                            <label class="custom-control-label" for="size-all">All Size</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div >
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="size-1">
+                            <label class="custom-control-label" for="size-1">XS</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="size-2">
+                            <label class="custom-control-label" for="size-2">S</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="size-3">
+                            <label class="custom-control-label" for="size-3">M</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="size-4">
+                            <label class="custom-control-label" for="size-4">L</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="menu_chack">
+                            <input type="checkbox" class="custom-control-input" id="size-5">
+                            <label class="custom-control-label" for="size-5">XL</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Size End -->
+            </div>
+            </div>
+            <!-- Shop Sidebar End -->
+
+
+            <!-- Shop Product Start -->
+
+                        <div class="search_bar">
+                            <form action="/">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search by name">
+                                    <div >
+                                        <span>
+                                            <i class="fa fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="sort_tab">
+                                <button class="btn" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                            Sort by
+                                        </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
+                                    <a class="dropdown-item" href="#">Latest</a>
+                                    <a class="dropdown-item" href="#">Popularity</a>
+                                    <a class="dropdown-item" href="#">Best Rating</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+<div class="products">
     <h1 class="title">latest dishes</h1>
- 
+
     <div class="box-container">
          <form action="" method="post" class="box">
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
@@ -24,7 +178,7 @@
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                   <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
                   <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                  <img  src="{{url_for('static', filename='images/macbook.jpg')}}" alt="">
+                  <img  src="macbook.jpg'" alt="">
                   <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
                   <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
                   <div class="flex">
@@ -32,6 +186,36 @@
                      <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
                   </div>
                </form>
+               <form action="" method="post" class="box">
+                <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
+                <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+                <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+                <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
+                <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                <img  src="macbook.jpg'" alt="">
+                <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
+                <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
+                <div class="flex">
+                   <div class="price">295,000<span> ৳</span></div>
+                   <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+                </div>
+             </form>
+             <form action="" method="post" class="box">
+                <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
+                <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
+                <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
+                <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
+                <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
+                <img  src="macbook.jpg'" alt="">
+                <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
+                <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
+                <div class="flex">
+                   <div class="price">295,000<span> ৳</span></div>
+                   <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+                </div>
+             </form>
          <form action="" method="post" class="box">
                   <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
                   <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
@@ -47,17 +231,29 @@
                      <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
                   </div>
                </form>
+</div>
       <!-- <p class="empty">no products added yet!</p>-->
-          
- 
     </div>
- 
+    </div>
+
+
  </section>
- 
- 
- <!-- menu section ends -->
- 
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
  <!-- custom js file link  -->
- <script src="js/script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
  
 {% endblock %}

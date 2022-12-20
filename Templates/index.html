@@ -152,17 +152,18 @@
 
       <div class="box-container">
                <form action="" method="post" class="box">
-                  <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
+                  <input type="hidden" name="pid" value="">
                   <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
                   <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
                   <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
                   <a href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
                   <button type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                  <img  src="{{url_for('static', filename='images/macbook.jpg')}}" alt="">
+                  {% set file_name = product_img.rstrip() %}
+                  <img src="{{ url_for('static', filename=file_name)}}">
                   <a href="category.php?category=<?= $fetch_products['category']; ?>" class="cat"><?= $fetch_products['category']; ?></a>
-                  <div class="name">Apple MacBook Pro 16-Inch M1 Pro Chip, 16GB RAM, 1TB SSD (MK193) Space Gray 2021</div>
+                  <div class="name">{{ Model_name }}</div>
                   <div class="flex">
-                     <div class="price">295,000<span> ৳</span></div>
+                     <div class="price">{{ product_price }}<span> ৳</span></div>
                      <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
                   </div>
                </form>

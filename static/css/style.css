@@ -54,7 +54,6 @@ html {
 
 .container-fluid{
    position: absolute;
-   z-index: 3;
    width: 100%;
 }
 
@@ -67,7 +66,7 @@ html {
       margin-left: -80px;
       background-color: var(--f-color);
       max-width: 25rem;
-      padding: .5rem;
+      padding: 1rem;
       border-radius: 2%;
       font-size: large;
       text-align: center;
@@ -78,15 +77,21 @@ html {
    }
    .filter_block .title{
       font-size: 20px;
-      margin-bottom: 3px;
+      margin: 5px 0px 20px 0px;
+      text-align: left;
       left: 0;
 
    }
    .filter_block .menu_chack{
       display: flex;
       font-size: 15px;
-      margin-left: 20px;
+      margin-left: 5px;
       width: 100%;
+
+   }
+   .filter_block .menu_chack .custom-control-input{
+
+      margin:  5px 10px 15px 0px;
 
    }
    .container-fluid .search_bar{

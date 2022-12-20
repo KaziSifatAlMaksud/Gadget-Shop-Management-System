@@ -7,15 +7,28 @@ app = Flask(__name__)
 myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
-shopProduct = mydb["product"]
+shopProduct = mydb["producat"]
 
 @app.route("/")
 def home_page():
-    return render_template('index.html')
+    for y in shopProduct.find():
+        Model_name = y["Model"]
+        product_price = y["price"]
+        Product_type = y["Type"]
+        product_img = y["image"]
+        print(Model_name)
+        print(product_price)
+        print(product_img)
+        #return render_template('index.html',**locals())
+    return render_template('index.html',**locals())
+@app.route("/valuo")
+def valuo():
+
+    return "Hello sifat"
 
 @app.route("/about")
 def about_page():
-    return render_template('about.html')
+    return render_template('412about.html')
 
 @app.route('/login',methods=["GET","POST"])
 def login():
@@ -27,7 +40,7 @@ def login():
         for x in mycol.find({"email": username}):
             for y in mycol.find({"re_pass": password}):
                 logprofile = True
-                message = f"Hello,{username}"
+                message = "Hello,{username}"
                 print(message)
                 return render_template("index.html ",**locals())
         message = "Username or password is incorrect"

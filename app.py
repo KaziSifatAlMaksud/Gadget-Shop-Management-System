@@ -19,12 +19,9 @@ def home_page():
         print(Model_name)
         print(product_price)
         print(product_img)
-        #return render_template('index.html',**locals())
+        return render_template('index.html',**locals())
     return render_template('index.html',**locals())
-@app.route("/valuo")
-def valuo():
 
-    return "Hello sifat"
 
 @app.route("/about")
 def about_page():

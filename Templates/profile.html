@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    
+{% endblock %}
+{% block content %}   
+ 
+<div class="heading" style="margin-top: 100px;">
+    <h3>Profile</h3>
+    <p><a href="{{url_for('home_page')}}">home</a> <span> / contact</span></p>
+ </div>
+ 
+<section class="user-details">
+
+   <div class="user">
+      <img src="images/user-icon.png" alt="">
+      <p><i class="fas fa-user"></i><span><span><?= $fetch_profile['name']; ?></span></span></p>
+      <p><i class="fas fa-phone"></i><span><?= $fetch_profile['number']; ?></span></p>
+      <p><i class="fas fa-envelope"></i><span><?= $fetch_profile['email']; ?></span></p>
+      <a href="{{url_for('update_profile_page')}}" class="btn">update info</a>
+      <p class="address"><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
+      <a href="{{url_for('update_address_page')}}" class="btn">update address</a>
+   </div>
+
+</section>
+
+ 
+
+ <!-- custom js file link  -->
+ <script src="js/script.js"></script>
+ 
+{% endblock %}
+

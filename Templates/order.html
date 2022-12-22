@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    
+{% endblock %}
+{% block content %}    
+
+<div class="heading" style="margin-top: 100px;">
+   <h3>Orders</h3>
+   <p><a href="home.php">home</a> <span> / contact</span></p>
+</div>
+
+<section class="orders">
+
+   <h1 class="title">your orders</h1>
+
+   <div class="box-container">
+   <div class="box">
+      <p>placed on : <span></span></p>
+      <p>name : <span></span></p>
+      <p>email : <span></span></p>
+      <p>number : <span></span></p>
+      <p>address : <span></span></p>
+      <p>payment method : <span></span></p>
+      <p>your orders : <span></span></p>
+      <p>total price : <span>/-</span></p>
+      <p> payment status : </p>
+   </div>
+   </div>
+
+</section>
+
+
+ 
+ <!-- custom js file link  -->
+ <script src="js/script.js"></script>
+ 
+{% endblock %}
+
+
+
+
+
+
+
+

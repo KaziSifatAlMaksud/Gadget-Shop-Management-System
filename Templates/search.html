@@ -1,65 +1,16 @@
-<!-- header section start -->
 
-<header class="header">
-   
-   <section class="flex">
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="heading" style="margin-top: 100px;">
+   <h3>Search Page</h3>
+   <p><a href="{{url_for('home_page')}}">home</a> <span> / contact</span></p>
+</div>
+    
 
-      <a href="home.php" class="logo">
-         <img src="images/logo.jpg" alt="Gadget shop">
-      </a>
-      <!-- scerch from -->
-      <section class="search-form">
-      <form method="post" action="">
-      <input type="text" name="search_box" placeholder="search here..." class="box">
-      <button type="submit" name="search_btn" class="fas fa-search"></button>
-      </form>
-   </section>   
-
-      <nav class="navbar">
-         <a href="home.php">Home</a>
-         <a href="about.php">About</a>
-         <a href="menu.php">Menu</a>
-         <a href="orders.php">Orders</a>
-         <a href="contact.php">Contact</a>
-      </nav>
-
-      <div class="icons">
-        
-         
-         <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_items; ?>)</span></a>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="menu-btn" class="fas fa-bars"></div>
-      </div>
-
-      <div class="profile">
-         <?php
-            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
-         <p class="name"><?= $fetch_profile['name']; ?></p>
-         <div class="flex">
-            <a href="profile.php" class="btn">profile</a>
-            <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
-         </div>
-         <p class="account">
-            <a href="login.php">login</a> or
-            <a href="register.php">register</a>
-         </p> 
-         <?php
-            }else{
-         ?>
-            <p class="name">please login first!</p>
-            <a href="login.php" class="btn">login</a>
-         <?php
-          }
-         ?>
-      </div>
-
-   </section>
-
-</header>
 
 <section class="products" style="min-height: 100vh; padding-top:0;">
 
@@ -94,5 +45,10 @@
 </section>
 
 
+{% endblock %}
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+
+
+

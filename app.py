@@ -8,19 +8,14 @@ myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
 shopProduct = mydb["producat"]
-contactmess = mydb["contact"]
+contactMess = mydb["contact"]
 
 @app.route("/")
 def home_page():
+    prodct_arry = []
     for y in shopProduct.find():
-        Model_name = y["Model"]
-        product_price = y["price"]
-        Product_type = y["Type"]
-        product_img = y["image"]
-        print(Model_name)
-        print(product_price)
-        print(product_img)
-        return render_template('index.html',**locals())
+        prodct_arry.append(y)
+    l = len(prodct_arry)
     return render_template('index.html',**locals())
 
 
@@ -99,13 +94,17 @@ def contact():
         cont_d["name"] = cont_name
         cont_d["email"] = cont_email
         cont_d["message"] = cont_mess
-        contactmess.insert_one(cont_d)
+        contactMess.insert_one(cont_d)
         sucessmess = "Register Successfully"
-        print(sucess_mess)
+        print(sucessmess)
     return render_template('contact.html')
 @app.route("/menu")
 def menu():
-    return render_template('menu.html')
+    prodct_arry = []
+    for k in shopProduct.find():
+        prodct_arry.append(k)
+    l = len(prodct_arry)
+    return render_template('menu.html',**locals())
 @app.route("/search")
 def search():
     return render_template('search.html')

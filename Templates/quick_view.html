@@ -5,10 +5,12 @@
 
 {% endblock %}
 {% block content %}
-
+<div class="heading" style="margin-top: 100px;">
+   <h3>Quick View Product</h3>
+   <p><a href="home.php">home</a> <span> / contact</span></p>
+</div>
  <section class="quick-view">
 
-    <h1 class="title">quick view</h1>
    <!-- <form type="hidden" action="" method="post" >
        <input type="hidden" name="pid" value="">
        <input type="hidden" name="name" value="">
@@ -16,17 +18,17 @@
        <input type="hidden" name="image" value="">
     </form>
     -->
-    <section class="card">
+    <section class="quick-view card">
 
       <img src="{{url_for('static', filename='images/macbook.jpg')}}" class="card-img" alt="...">
 
     <div class="doc">
-      <h1 class="name">MacBook Air With M1 Chip</h1>
+      <h1  class="name">MacBook Air With M1 Chip</h1>
         <p> Form $999 or $83.25/mo ~ for 12 mon*</p>
         <br>
-        <p><b>Details</b>  Offers  History</p>
+        <p><b>Details Offers  History </b></p>
 
-         <ol>
+         <ol class="detail">
             <li>Apple M1 chip delivers powerful CPU, GPU, andmachine learning performance.</li>
             <li>Up to 18 hours of battery life so you can go longer than everFootnote1 </li>
             <li>Up to 18 hours of battery life so you can go longer than everFootnote1</li>
@@ -35,14 +37,12 @@
 
         <br>
         <br>
-       <a href="#" class="cat"></a>
 
        <div class="flex">
           <div class="price"><span>$</span>9999</div>
           <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
        </div>
-       <a type="submit" class="btn">add to cart</a>
-
+       <a type="submit" class="btn" style="margin-right: 50px;">add to cart</a>
         <a href="#" target="_blank" class="btn">Buy Now</a>
     </div>
 

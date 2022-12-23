@@ -1,25 +1,25 @@
 from flask import Flask, render_template, request, url_for, redirect, session
-#import pymongo
+import pymongo
 
 app = Flask(__name__)
 
 
-#myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
-#mydb = myClined["gShop"]
-#mycol = mydb["user"]
-#shopProduct = mydb["producat"]
+myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
+mydb = myClined["gShop"]
+mycol = mydb["user"]
+shopProduct = mydb["producat"]
 
 @app.route("/")
 def home_page():
-#    for y in shopProduct.find():
-#        Model_name = y["Model"]
-#        product_price = y["price"]
-#        Product_type = y["Type"]
-#        product_img = y["image"]
-#        print(Model_name)
-#        print(product_price)
-#        print(product_img)
-#        return render_template('index.html',**locals())
+    for y in shopProduct.find():
+        Model_name = y["Model"]
+        product_price = y["price"]
+        Product_type = y["Type"]
+        product_img = y["image"]
+        print(Model_name)
+        print(product_price)
+        print(product_img)
+        return render_template('index.html',**locals())
     return render_template('index.html',**locals())
 
 
@@ -57,19 +57,19 @@ def login():
         username = form_data["email"]
         password = form_data["pass"]
 
-#        for x in mycol.find({"email": username}):
-#            for y in mycol.find({"re_pass": password}):
-#                logprofile = True
-#                message = "Hello,{username}"
-#                print(message)
-#                return render_template("index.html ",**locals())
-#        message = "Username or password is incorrect"
+        for x in mycol.find({"email": username}):
+            for y in mycol.find({"re_pass": password}):
+                logprofile = True
+                message = "Hello,{username}"
+                print(message)
+                return render_template("index.html ",**locals())
+        message = "Username or password is incorrect"
     return render_template("login.html", **locals())
 
 
 @app.route("/register",methods=["GET","POST"])
 def register():
-#    user_d = {}
+    user_d = {}
     if request.method == "POST":
         form_data = request.form
         user_name = form_data["name"]
@@ -77,13 +77,13 @@ def register():
         user_mobile = form_data["mobile"]
         user_pass = form_data["password1"]
         user_re_pass = form_data["password2"]
-#        user_d["name"] = user_name
-#        user_d["email"] = user_email
-#        user_d["mobile"] = user_mobile
-#        user_d["pass"] = user_pass
-#        user_d["re_pass"] = user_re_pass
-#        mycol.insert_one(user_d)
-#        sucess_mess = "Register Successfully"
+        user_d["name"] = user_name
+        user_d["email"] = user_email
+        user_d["mobile"] = user_mobile
+        user_d["pass"] = user_pass
+        user_d["re_pass"] = user_re_pass
+        mycol.insert_one(user_d)
+        sucess_mess = "Register Successfully"
         #return render_template("login.html", **locals())
     return render_template('register.html',**locals())
 

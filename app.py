@@ -8,6 +8,7 @@ myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
 shopProduct = mydb["producat"]
+contactmess = mydb["contact"]
 
 @app.route("/")
 def home_page():
@@ -89,6 +90,18 @@ def register():
 
 @app.route("/contact")
 def contact():
+    cont_d = {}
+    if request.method == "POST":
+        form_data = request.form
+        cont_name = form_data["name"]
+        cont_email = form_data["email"]
+        cont_mess = form_data["msg"]
+        cont_d["name"] = cont_name
+        cont_d["email"] = cont_email
+        cont_d["message"] = cont_mess
+        contactmess.insert_one(cont_d)
+        sucessmess = "Register Successfully"
+        print(sucess_mess)
     return render_template('contact.html')
 @app.route("/menu")
 def menu():

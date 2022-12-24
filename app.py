@@ -53,9 +53,22 @@ def order_page():
 
 
 
-@app.route("/update_address")
+@app.route("/update_address",methods=['GET',"POST"])
 def update_address_page():
-    return render_template('update_address.html')
+   if request.method == "POST":
+        if request.form["btn"] == "save address":
+            form_data = request.form
+            user_email = form_data["email"]
+            user_districts = form_data["districts"]
+            user_city = form_data["city"]
+            user_upazila = form_data["upazila"]
+            user_pin_code = form_data["pin_code"]
+            for x in mycol.find({"email": user_email}):
+                myquery = {"email": x["email"]}
+                newvalues = {"$set": {"email": user_email,"address": user_districts +","+ user_city+","+user_upazila+","+user_pin_code}}
+                mycol.update_one(myquery, newvalues)
+                print("update Successfull")
+   return render_template('update_address.html',**locals())
 
 @app.route("/profile")
 def profile_page():

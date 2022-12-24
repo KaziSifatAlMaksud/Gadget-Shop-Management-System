@@ -522,7 +522,7 @@ section {
    width: 30rem;
    display: none;
    animation: fadeIn .2s linear;
-   z-index: inherit;
+   z-index: 100;
 }
 
 .header .flex .profile.active {
@@ -1618,6 +1618,7 @@ hr{
 
    .products .box-container {
       grid-template-columns: 1fr;
+
    }
 
    .heading h3 {

@@ -16,20 +16,15 @@
    <div class="user box-container">
 
        <img src="{{url_for('static', filename='images/projile_image.jpg')}}" alt="">
-      <p><i class="fas fa-user"></i><b>UserName:</b></p>
-      <p><i class="fas fa-phone"></i><b>Mobile Number:</b></p>
-      <p><i class="fas fa-envelope"></i><b>Email Address:</b></p>
+      <p><i class="fas fa-user"></i><b>UserName:</b>{{ user_name }}</p>
+      <p><i class="fas fa-phone"></i><b>Mobile Number:</b>{{ user_mobile }}</p>
+      <p><i class="fas fa-envelope"></i><b>Email Address:</b>{{ user_email }}</p>
       <a href="{{url_for('update_profile_page')}}" class="btn">update info</a>
-      <p class="address"><i class="fas fa-map-marker-alt"></i> <b>Address: </b> </p>
+      <p class="address"><i class="fas fa-map-marker-alt"></i> <b>Address: {{ user_address }}</b> </p>
       <a href="{{url_for('update_address_page')}}" class="btn">update address</a>
    </div>
 
 </section>
-
- 
-
- <!-- custom js file link  -->
- <script src="js/script.js"></script>
  
 {% endblock %}
 

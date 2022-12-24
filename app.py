@@ -10,13 +10,31 @@ mycol = mydb["user"]
 shopProduct = mydb["producat"]
 contactMess = mydb["contact"]
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home_page():
     prodct_arry = []
     for y in shopProduct.find():
         prodct_arry.append(y)
     l = len(prodct_arry)
+    if request.method == "POST":
+        form_data = request.form
+        prodct_model = form_data['pid']
+        x = shopProduct.find_one({"Model":prodct_model})
+        if x is not None:
+            p_type = x["Type"]
+            p_price = x["price"]
+            p_model = x["Model"]
+            p_processor =x["Processor"]
+            p_display = x["Display"]
+            p_ram = x["Ram"]
+            p_feat = x["Features"]
+            p_warrant = x["Warranty"]
+            p_image = x["image"]
+            p_descript = x["Description"]
+            print(p_display)
+        return render_template('quick_view.html', **locals())
     return render_template('index.html',**locals())
+
 
 
 @app.route("/about")
@@ -41,9 +59,24 @@ def update_address_page():
 
 @app.route("/profile")
 def profile_page():
+
     return render_template('profile.html')
-@app.route("/update_profile")
+@app.route("/update_profile",methods=['GET',"POST"])
 def update_profile_page():
+    if request.method == "POST":
+        if request.form["btn"] == "update now":
+            form_data = request.form
+            user_name = form_data["name"]
+            user_email = form_data["email"]
+            user_mobile = form_data["number"]
+            user_old_pas = form_data["old_pass"]
+            user_pass = form_data["new_pass"]
+            user_re_pass = form_data["confirm_pass"]
+            for x in mycol.find({"email": user_email}):
+                myquery = {"name":x["name"],"email": x["email"],"mobile":x["mobile"],"pass": x["re_pass"]}
+                newvalues = {"$set": {"name": user_name ,"email": user_email ,"mobile": user_mobile,"pass": user_re_pass,"address":""}}
+                mycol.update_one(myquery,newvalues)
+                print("update Successfull")
     return render_template('update_profile.html')
 
 @app.route('/login',methods=["GET","POST"])
@@ -83,7 +116,7 @@ def register():
         #return render_template("login.html", **locals())
     return render_template('register.html',**locals())
 
-@app.route("/contact")
+@app.route("/contact",methods=["GET","POST"])
 def contact():
     cont_d = {}
     if request.method == "POST":
@@ -98,19 +131,57 @@ def contact():
         sucessmess = "Register Successfully"
         print(sucessmess)
     return render_template('contact.html')
-@app.route("/menu")
+@app.route("/menu", methods=["GET","POST"])
 def menu():
     prodct_arry = []
     for k in shopProduct.find():
         prodct_arry.append(k)
     l = len(prodct_arry)
+    if request.method == "POST":
+        if request.form["btn"] == "search":
+            prodct_arry.clear()
+            if request.method == "POST":
+                form_data = request.form
+                search_value = form_data['search_box']
+                for x in shopProduct.find({"Model": search_value}):
+                    prodct_arry.append(x)
+                for x in shopProduct.find({"Type": search_value}):
+                    prodct_arry.append(x)
+                l = len(prodct_arry)
+                return render_template('menu.html', **locals())
+        elif request.form["btn"] == "eye":
+            form_data = request.form
+            prodct_model = form_data['pid']
+            x = shopProduct.find_one({"Model": prodct_model})
+            if x is not None:
+                p_type = x["Type"]
+                p_price = x["price"]
+                p_model = x["Model"]
+                p_processor = x["Processor"]
+                p_display = x["Display"]
+                p_ram = x["Ram"]
+                p_feat = x["Features"]
+                p_warrant = x["Warranty"]
+                p_image = x["image"]
+                p_descript = x["Description"]
+                print(p_display)
+                return render_template('quick_view.html', **locals())
     return render_template('menu.html',**locals())
-@app.route("/search")
+@app.route("/search",methods=["GET","POST"])
 def search():
-    return render_template('search.html')
-@app.route("/quick_view")
+    if request.method == "POST":
+        form_data = request.form
+        search_value = form_data['search_box']
+        prodct_arry = []
+        for x in shopProduct.find({"Model": search_value}):
+            prodct_arry.append(x)
+        for x in shopProduct.find({"Type": search_value}):
+            prodct_arry.append(x)
+        l = len(prodct_arry)
+        return render_template('search.html',**locals())
+@app.route("/quick_view",methods=["GET","POST"])
 def quick_view():
-    return render_template('quick_view.html')
+    return render_template('quick_view.html',**locals())
 
 if __name__ == "__main__":
     app.run(debug=True)

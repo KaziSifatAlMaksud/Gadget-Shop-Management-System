@@ -154,7 +154,7 @@
 
            {% for y in  range(l) %}
                     <form action="/" method="post" class="box">
-                    <input type="text" name="pid" value="{{ prodct_arry[y]['_id'] }}">
+                    <input  type="hidden" name="pid" value="{{ prodct_arry[y]['Model'] }}">
                     <button type="submit" class="fas fa-eye"></button>
                     <button type="submit" class="fas fa-shopping-cart"></button>
                         <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">

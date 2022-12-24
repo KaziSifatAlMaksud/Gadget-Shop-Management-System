@@ -20,26 +20,28 @@
     -->
     <section class="quick-view card">
 
-      <img src="{{url_for('static', filename='images/macbook.jpg')}}" class="card-img" alt="...">
+      <img src="{{ url_for('static', filename = p_image) }}" alt="">
 
     <div class="doc">
-      <h1  class="name">MacBook Air With M1 Chip</h1>
-        <p> Form $999 or $83.25/mo ~ for 12 mon*</p>
+      <h1  class="name">{{ p_model }}</h1>
+        <p> Form {{ p_price }} <span>৳</span> or {{ p_price/10}}৳/mo ~ for 12 mon*</p>
         <br>
-        <p><b>Details Offers  History </b></p>
-
-         <ol class="detail">
-            <li>Apple M1 chip delivers powerful CPU, GPU, andmachine learning performance.</li>
-            <li>Up to 18 hours of battery life so you can go longer than everFootnote1 </li>
-            <li>Up to 18 hours of battery life so you can go longer than everFootnote1</li>
-            <li>Fanless design for silent operation</li>
-         </ol>
+        <p><b>Details Information </b></p>
+         <ul class="detail">
+            <li><b>Type:</b> {{ p_type }}</li>
+            <li><b>Model:</b> {{ p_model }}</li>
+            <li><b>Processor:</b> {{ p_processor }}</li>
+            <li><b>Display:</b> {{ p_display }}</li>
+            <li><b>Ram:</b> {{ p_ram }}</li>
+            <li><b>Features:</b> {{ p_feat }}</li>
+            <li><b>Warranty:</b> {{ p_warrant }}</li>
+         </ul>
 
         <br>
         <br>
 
        <div class="flex">
-          <div class="price"><span>$</span>9999</div>
+          <div class="price"><span>Price :  </span> {{ p_price }} <span>৳</span></div>
           <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
        </div>
        <a type="submit" class="btn" style="margin-right: 50px;">add to cart</a>
@@ -47,6 +49,11 @@
     </div>
 
 </section>
+
+ <div class="box">
+            <p>{{ p_descript }}</p>
+
+        </div>
 
 
 

@@ -35,11 +35,21 @@ def home_page():
         return render_template('quick_view.html', **locals())
     return render_template('index.html',**locals())
 
+@app.route("/<name>", methods=['GET', 'POST'])
+def home(name):
+        prodct_arry = []
+        name = name.replace("_"," ")
+#        for x in shopProduct.find({"Model": search_value}):
+#            prodct_arry.append(x)
+        for x in shopProduct.find({"Type": name}):
+            prodct_arry.append(x)
+        l = len(prodct_arry)
+        return render_template('search.html', **locals())
 
 
 @app.route("/about")
 def about_page():
-    return render_template('412about.html')
+    return render_template('about.html')
 @app.route("/checkout")
 def checkout_page():
     return render_template('checkout.html')
@@ -72,7 +82,6 @@ def update_address_page():
 
 @app.route("/profile")
 def profile_page():
-
     return render_template('profile.html')
 @app.route("/update_profile",methods=['GET',"POST"])
 def update_profile_page():

@@ -32,18 +32,18 @@
       <a href="cart.php" class="btn">veiw cart</a>
    </div>
 
-   <input type="hidden" name="total_products" value="<?= $total_products; ?>">
-   <input type="hidden" name="total_price" value="<?= $grand_total; ?>" value="">
-   <input type="hidden" name="name" value="<?= $fetch_profile['name'] ?>">
-   <input type="hidden" name="number" value="<?= $fetch_profile['number'] ?>">
-   <input type="hidden" name="email" value="<?= $fetch_profile['email'] ?>">
-   <input type="hidden" name="address" value="<?= $fetch_profile['address'] ?>">
+   <input type="hidden" name="total_products" >
+   <input type="hidden" name="total_price" >
+   <input type="hidden" name="name" >
+   <input type="hidden" name="number" >
+   <input type="hidden" name="email">
+   <input type="hidden" name="address">
 
    <div class="user-info">
       <h3 style="color: #fff;">your info</h3>
-      <p><i class="fas fa-user"></i><span><?= $fetch_profile['name'] ?></span></p>
-      <p><i class="fas fa-phone"></i><span><?= $fetch_profile['number'] ?></span></p>
-      <p><i class="fas fa-envelope"></i><span><?= $fetch_profile['email'] ?></span></p>
+      <p><i class="fas fa-user"></i></p>
+      <p><i class="fas fa-phone"></i></p>
+      <p><i class="fas fa-envelope"></i></p>
       <a href="{{url_for('update_profile_page')}}" class="btn">update info</a>
       <h3 style="color: #fff;">delivery address</h3>
       <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
@@ -61,15 +61,6 @@
 </form>
 
 </section>
-
-
-
-
-
-
-
-
-
  <!-- custom js file link  -->
  <script src="js/script.js"></script>
 

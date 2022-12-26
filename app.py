@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, url_for, redirect, session
 import pymongo
 
 app = Flask(__name__)
-
-
 myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]

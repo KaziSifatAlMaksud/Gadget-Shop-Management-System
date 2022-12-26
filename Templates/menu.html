@@ -169,27 +169,7 @@
                     <h1 class="title">latest Product</h1>
                     <div  class="box-container">
                         <!-- ADD product-->
-                         {% for y in  range(l) %}
-                    <form action="/menu" method="post" class="box" name="pro">
-                    <input type="hidden" name="pid" value="">
-                    <input type="hidden" name="name" value="<?= $fetch_products['name']; ?>">
-                    <input type="hidden" name="price" value="<?= $fetch_products['price']; ?>">
-                    <input type="hidden" name="image" value="<?= $fetch_products['image']; ?>">
-                    <a  href="{{url_for('quick_view')}}" class="fas fa-eye"></a>
-                    <button  type="submit" class="fas fa-shopping-cart" name="add_to_cart"></button>
-                  <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">
-                  <a href="#" class="cat"></a>
-                  <div class="name">{{ prodct_arry[y]['Model'] }}</div>
-                  <div class="flex">
-                     <div class="price">{{ prodct_arry[y]['price'] }}<span> ৳</span></div>
-                     <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
-                  </div>
-               </form>
-                {% endfor %}
-
-
-
-                     {% for y in  range(l) %}
+                        {% for y in  range(l) %}
                     <form action="/menu" method="post" class="box">
                     <input  type="hidden" name="pid" value="{{ prodct_arry[y]['Model'] }}">
                     <button type="submit" class="fas fa-eye" name="btn" value="eye"><button>

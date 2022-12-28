@@ -10,18 +10,8 @@
    <p><a href="home.php">home</a> <span> / contact</span></p>
 </div>
  <section class="quick-view">
-
-   <!-- <form type="hidden" action="" method="post" >
-       <input type="hidden" name="pid" value="">
-       <input type="hidden" name="name" value="">
-       <input type="hidden" name="price" value="">
-       <input type="hidden" name="image" value="">
-    </form>
-    -->
     <section class="quick-view card">
-
       <img src="{{ url_for('static', filename = p_image) }}" alt="">
-
     <div class="doc">
       <h1  class="name">{{ p_model }}</h1>
         <p> Form {{ p_price }} <span>৳</span> or {{ p_price/10}}৳/mo ~ for 12 mon*</p>
@@ -50,7 +40,7 @@
 
 </section>
 
- <div class="box">
+ <div class="box" >
             <p>{{ p_descript }}</p>
 
         </div>

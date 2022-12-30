@@ -108,12 +108,19 @@ def login():
 
         for x in mycol.find({"email": username}):
             for y in mycol.find({"re_pass": password}):
+                session['name'] = request.form.get("email")
                 logprofile = True
                 message = "Hello,{username}"
                 print(message)
-                return render_template("index.html ",**locals())
+                return redirect('/')
         message = "Username or password is incorrect"
     return render_template("login.html", **locals())
+
+
+@app.route("/logout")
+def logout():
+    session["name"] = None
+    return redirect("/")
 
 
 @app.route("/register",methods=["GET","POST"])

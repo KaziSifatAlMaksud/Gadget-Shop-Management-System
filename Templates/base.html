@@ -40,30 +40,28 @@
       </nav>
 
       <div class="icons">
-         <a href="{{url_for('cart_page')}}"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_items; ?>)</span></a>
+         <a href="{{url_for('cart_page')}}"><i class="fas fa-shopping-cart"></i><span></span></a>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="menu-btn" class="fas fa-bars"></div>
       </div>
+        <div class="profile">
+    {% if 'name' in session %}
 
-      <div class="profile">
-         <p class="name"></p>
-          {% if logprofile == True %}
+         <p class="name" style="color: #fff;">{{ session['name']}}</p>
               <div class="flex">
             <a href="{{url_for('profile_page')}}"class="btn">profile</a>
-            <a href="/logout" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+            <a href="/logout" onclick="return confirm('Click OK for logout?');" class="delete-btn">logout</a>
          </div>
-        {% endif %}
+         {% endif %}
 
-      {% if logprofile == False %}
+      {% if 'name' not in session %}
+         <p style="color: #fff;" class="name">please login first!</p>
+            <a href="{{url_for('login')}}" class="btn">login</a>
 
-         <p class="account" style="color: #fff;">
-            <a style="color: #fff; font-size: x-large;" href="{{url_for('login')}}">login</a> or
-            <a style="color: #fff; font-size: x-large;" href="{{url_for('register')}}">register</a>
-         </p>
       {% endif %}
 
-            <p style="color: #fff;" class="name">please login first!</p>
-            <a href="{{url_for('login')}}" class="btn">login</a>
+
+
 
       </div>
 

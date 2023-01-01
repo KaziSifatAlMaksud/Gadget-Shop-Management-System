@@ -47,14 +47,20 @@
 
       <div class="profile">
          <p class="name"></p>
-         <div class="flex">
+          {% if logprofile == True %}
+              <div class="flex">
             <a href="{{url_for('profile_page')}}"class="btn">profile</a>
-            <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+            <a href="/logout" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
          </div>
+        {% endif %}
+
+      {% if logprofile == False %}
+
          <p class="account" style="color: #fff;">
             <a style="color: #fff; font-size: x-large;" href="{{url_for('login')}}">login</a> or
             <a style="color: #fff; font-size: x-large;" href="{{url_for('register')}}">register</a>
          </p>
+      {% endif %}
 
             <p style="color: #fff;" class="name">please login first!</p>
             <a href="{{url_for('login')}}" class="btn">login</a>

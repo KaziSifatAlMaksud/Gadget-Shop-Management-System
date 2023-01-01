@@ -1,12 +1,21 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 import pymongo
-
+from flask import *
 app = Flask(__name__)
+app.secret_key = "sifat"
 myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")
 mydb = myClined["gShop"]
 mycol = mydb["user"]
 shopProduct = mydb["producat"]
 contactMess = mydb["contact"]
+
+
+@app.before_request
+def before_request():
+    g.user = None
+    if 'user' in session:
+        g.user = session['user']
+
 
 @app.route("/", methods=['GET', 'POST'])
 def home_page():
@@ -80,7 +89,21 @@ def update_address_page():
 
 @app.route("/profile")
 def profile_page():
-    return render_template('profile.html')
+    if 'email' in session:
+        email = session['email']
+        return render_template('profile.html', name=email)
+    else:
+        return '<p>Please login first</p>'
+
+
+@app.route("/logout")
+def logout_page():
+    if 'user' in session:
+        session.pop('email', None)
+        return render_template('login.html',**locals());
+    else:
+        return '<p>user already logged out</p>'
+
 @app.route("/update_profile",methods=['GET',"POST"])
 def update_profile_page():
     if request.method == "POST":
@@ -105,23 +128,14 @@ def login():
         form_data = request.form
         username = form_data["email"]
         password = form_data["pass"]
-
+        session['user'] = username
         for x in mycol.find({"email": username}):
             for y in mycol.find({"re_pass": password}):
-                session['name'] = request.form.get("email")
                 logprofile = True
-                message = "Hello,{username}"
-                print(message)
-                return redirect('/')
+                session['user'] = username
+                return redirect(url_for('profile_page'))
         message = "Username or password is incorrect"
     return render_template("login.html", **locals())
-
-
-@app.route("/logout")
-def logout():
-    session["name"] = None
-    return redirect("/")
-
 
 @app.route("/register",methods=["GET","POST"])
 def register():

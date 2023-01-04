@@ -34,8 +34,8 @@ def home_page():
         cart_list.append(pr_model)
         session['product'] = cart_list
         print(session)
-        len_product = len(session['product'])
-        print(len_product)
+        session['len_product'] = len(session['product'])
+
 
     return render_template('index.html', **locals())
 
@@ -61,10 +61,12 @@ def checkout_page():
 @app.route("/cart")
 def cart_page():
     prodct_arry = []
+    sub_total = 0
     len_product = len(session['product'])
     for y in range(len_product):
         x = shopProduct.find_one({"_id": ObjectId(session['product'][y])})
         prodct_arry.append(x)
+        sub_total = sub_total + x['price']
     l = len(prodct_arry)
     return render_template('cart.html',**locals())
 
@@ -251,6 +253,19 @@ def quick_view():
         p_warrant = x["Warranty"]
         p_image = x["image"]
         p_descript = x["Description"]
+    # if request.args.get('delete') is not None:
+    #     id = request.args.get('delete')
+    #     print(id)
+    #     len_product = len(session['product'])
+    #     date_item = False
+    #     for x in range(len_product):
+    #         if session['product'][x] == id:
+    #             del session['product'][x]
+    #     print(session['product'])
+    # if request.args.get('delete_all') is not None:
+    #     id = request.args.get('delete+all')
+    #     session['product'] = []
+    #     return redirect(url_for('profile_page'))
     return render_template('quick_view.html',**locals())
 
 if __name__ == "__main__":

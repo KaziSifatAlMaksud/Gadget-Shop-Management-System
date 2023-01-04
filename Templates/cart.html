@@ -19,12 +19,11 @@
    <h1 class="title">your cart</h1>
 
    <div class="box-container">
-
     {% for y in range(l) %}
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="{{ prodct_arry[y]['_id'] }}">
           <a class="fas fa-eye" href="{{ url_for('quick_view', id=prodct_arry[y]['_id']) }}" ></a>
-         <button type="submit" class="fas fa-times" name="delete" onclick="return confirm('delete this item?');"></button>
+         <a onclick="return confirm('delete this item?');" href="{{ url_for('quick_view', delete=prodct_arry[y]['_id']) }}" class = "fas fa-times"></a>
          <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">
          <div class="name">{{ prodct_arry[y]['Model'] }}</div>
          <div class="flex">
@@ -32,15 +31,14 @@
             <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
             <button type="submit" class="fas fa-edit" name="update_qty"></button>
          </div>
-         <div class="sub-total"> sub total : <span>/-</span> </div>
+         <div class="sub-total"> sub total : {% set sub =  prodct_arry[y]['price'] %} {{ sub }} <span>/-</span> </div>
       </form>
        {% endfor %}
-      
 
    </div>
 
    <div class="cart-total">
-      <p>cart total : <span></span></p>
+      <p>cart total : <span>{{ sub_total }}</span></p>
       <a href="{{url_for('checkout_page')}}" class="btn ">proceed to checkout</a>
    </div>
 

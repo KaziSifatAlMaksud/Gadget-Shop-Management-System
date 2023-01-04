@@ -40,7 +40,7 @@
       </nav>
 
       <div class="icons">
-         <a href="{{url_for('cart_page')}}"><i class="fas fa-shopping-cart"></i><span></span></a>
+         <a href="{{url_for('cart_page')}}"><i class="fas fa-shopping-cart"></i><span>{{ session['len_product'] }}</span></a>
          <div id="user-btn" class="fas fa-user"></div>
          <div id="menu-btn" class="fas fa-bars"></div>
       </div>
@@ -70,25 +70,7 @@
       <div class="menu-bar"id="menu-bar">
          <ul>
            <li><a href="#">SmartPhone</a>
-           <div class="dropdown-menu">
-                   <ul>
-                     <li><a href="#">Pricing</a></li>
-                     <li><a href="#">Portfolio</a></li>
-                     <li>
-                       <a href="#">Team <i class="fas fa-caret-right"></i></a>
 
-                       <div class="dropdown-menu-1">
-                         <ul>
-                           <li><a href="#">Team-1</a></li>
-                           <li><a href="#">Team-2</a></li>
-                           <li><a href="#">Team-3</a></li>
-                           <li><a href="#">Team-4</a></li>
-                         </ul>
-                       </div>
-                     </li>
-                     <li><a href="#">FAQ</a></li>
-                   </ul>
-                 </div>
            </li>
            <li><a href="/Laptop">Laptop</a></li>
            <li><a href="/Desktop">Desktops</a>
@@ -99,15 +81,6 @@
                      <li><a href="#">Portfolio</a></li>
                      <li>
                        <a href="#">Team <i class="fas fa-caret-right"></i></a>
-
-                       <div class="dropdown-menu-1">
-                         <ul>
-                           <li><a href="#">Team-1</a></li>
-                           <li><a href="#">Team-2</a></li>
-                           <li><a href="#">Team-3</a></li>
-                           <li><a href="#">Team-4</a></li>
-                         </ul>
-                       </div>
                      </li>
                      <li><a href="#">FAQ</a></li>
                    </ul>

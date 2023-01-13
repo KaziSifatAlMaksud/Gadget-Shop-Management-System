@@ -83,6 +83,8 @@ def checkout_page():
         if 'product' in session:
             session.pop('product',None)
             session.pop('sub_total',None)
+            session.pop('len_product',None)
+
             return redirect(url_for('home_page'))
     if 'user' in session:
         user = session['user']
@@ -128,7 +130,10 @@ def cart_page():
     #
     #     return redirect(url_for('profile_page'))
     prodct_arry = []
-    session['sub_total'] = 0
+    if 'product' not in session:
+        session['product'] = []
+        session['len_product'] = 0
+        session['sub_total'] = 0
     sub_total = 0
     len_product = len(session['product'])
     for y in range(len_product):
@@ -139,8 +144,14 @@ def cart_page():
 
     return render_template('cart.html',**locals())
 
-@app.route("/order")
+@app.route("/order", methods=['GET',"POST"])
 def order_page():
+    lists = []
+    haveoder = False
+    for datas in contactOrder.find():
+        print(datas)
+        haveoder = True
+    print(lists)
     return render_template('order.html')
 
 

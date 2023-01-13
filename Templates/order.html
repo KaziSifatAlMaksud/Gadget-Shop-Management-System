@@ -15,26 +15,27 @@
 
    <h1 class="title">your orders</h1>
 
+
    <div class="box-container">
+{% for j in lists %}
    <div class="box">
       <p>placed on : <span></span></p>
-      <p>name : <span></span></p>
-      <p>email : <span></span></p>
-      <p>number : <span></span></p>
-      <p>address : <span></span></p>
-      <p>payment method : <span></span></p>
-      <p>your orders : <span></span></p>
-      <p>total price : <span>/-</span></p>
-      <p> payment status : </p>
+      <p>name : <span>{{ j['name'] }}</span></p>
+      <p>email : <span>{{ j['email'] }}</span></p>
+      <p>number : <span>{{ j['mobile'] }}</span></p>
+      <p>address : <span>{{ j['address'] }}</span></p>
+      <p>payment method : <span>{{ j['payment_method'] }}</span></p>
+      <p>your orders : <span>{{ j['your_orders'] }}</span></p>
+      <p>total price : <span>{{ j['total_price'] }}/-</span></p>
+      <p> payment status : <span>{{ j['payment_status'] }}/-</span> </p>
    </div>
+   {% endfor %}
    </div>
+
+
 
 </section>
 
-
- 
- <!-- custom js file link  -->
- <script src="js/script.js"></script>
  
 {% endblock %}
 

@@ -6,58 +6,54 @@
 {% endblock %}
 {% block content %}
 
-    <!--  -->
 
 <div class="heading" style="margin-top: 100px;">
    <h3>checkout</h3>
    <p><a href="{{url_for('home_page')}}" >home</a> <span> / checkout</span></p>
 </div>
 
-<section class="checkout">form-container
+<section class="checkout">
 
    <h1 class="title">order summary</h1>
 
-<form action="" method="post">
+<form action="/checkout" method="post">
 
    <div class="cart-items">
       <h3 style="color: #fff;">cart items</h3>
-      <p><span class="name"><?= $fetch_cart['name']; ?></span><span class="price">$<?= $fetch_cart['price']; ?> x <?= $fetch_cart['quantity']; ?></span></p>
-      <?php
-            }
-         }else{
-            echo '<p class="empty">your cart is empty!</p>';
-         }
-      ?>
-      <p class="grand-total"><span class="name">grand total :</span><span class="price">$<?= $grand_total; ?></span></p>
-      <a href="cart.php" class="btn">veiw cart</a>
+      <p style="color: white"><span class="name">{{ user_name }}</span></p>
+
+      <p class="grand-total"><span class="name" style="color: black">grand total :</span><span class="price"> {{ session['sub_total'] }}৳</span></p>
+      <a href="{{url_for('cart_page')}}" class="btn">veiw cart</a>
    </div>
 
-   <input type="hidden" name="total_products" >
-   <input type="hidden" name="total_price" >
-   <input type="hidden" name="name" >
-   <input type="hidden" name="number" >
-   <input type="hidden" name="email">
-   <input type="hidden" name="address">
+
+   <input type="hidden" name="name"  value="{{ user_name }}">
+    <input type="hidden" name="id"  value="{{ user_id }}">
+    <input type="hidden" name="mobile"  value="{{ user_mobile }}">
+    <input type="hidden" name="address"  value="{{ user_address }}">
+    <input type="hidden" name="email"  value="{{ user_email }}">
+    <input type="hidden" name="sub-total"  value="{{ session['sub_total'] }}">
 
    <div class="user-info">
       <h3 style="color: #fff;">your info</h3>
-      <p><i class="fas fa-user"></i></p>
-      <p><i class="fas fa-phone"></i></p>
-      <p><i class="fas fa-envelope"></i></p>
+      <p><i class="fas fa-user"></i> {{ user_name }} </p>
+      <p><i class="fas fa-phone"></i>{{ user_mobile }}</p>
+      <p><i class="fas fa-envelope"></i>{{ user_email }}</p>
       <a href="{{url_for('update_profile_page')}}" class="btn">update info</a>
       <h3 style="color: #fff;">delivery address</h3>
-      <p><i class="fas fa-map-marker-alt"></i><span><?php if($fetch_profile['address'] == ''){echo 'please enter your address';}else{echo $fetch_profile['address'];} ?></span></p>
+      <p><i class="fas fa-map-marker-alt"></i><span>{{ user_address }}</span></p>
       <a href="{{url_for('update_address_page')}}" class="btn">update address</a>
       <select name="method" class="box" required>
          <option value="" disabled selected>select payment method --</option>
          <option value="cash on delivery">cash on delivery</option>
          <option value="credit card">credit card</option>
-         <option value="paytm">paytm</option>
-         <option value="paypal">paypal</option>
+         <option value="paytm">Visa</option>
+         <option value="paypal">PayPal</option>
+          <option value="paypal">Bkash</option>
+          <option value="paypal">MasterCard</option>
       </select>
-      <input type="submit" value="place order" class="btn <?php if($fetch_profile['address'] == ''){echo 'disabled';} ?>" style="width:100%; background:var(--red); color:var(--white);" name="submit">
+      <button type="submit" class="btn" style="width:100%; background:var(--red); color:var(--white);" name="submit">place order</button>
    </div>
-
 </form>
 
 </section>

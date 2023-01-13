@@ -23,12 +23,12 @@
       <form action="" method="post" class="box">
          <input type="hidden" name="cart_id" value="{{ prodct_arry[y]['_id'] }}">
           <a class="fas fa-eye" href="{{ url_for('quick_view', id=prodct_arry[y]['_id']) }}" ></a>
-         <a onclick="return confirm('delete this item?');" href="{{ url_for('quick_view', delete=prodct_arry[y]['_id']) }}" class = "fas fa-times"></a>
+         <a onclick="return confirm('delete this item?');" href="{{ url_for('cart_page', delete=prodct_arry[y]['_id']) }}" class = "fas fa-times"></a>
          <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">
          <div class="name">{{ prodct_arry[y]['Model'] }}</div>
          <div class="flex">
             <div class="price">{{ prodct_arry[y]['price'] }}<span>৳</span></div>
-            <input type="number" name="qty" class="qty" min="1" max="99" value="<?= $fetch_cart['quantity']; ?>" maxlength="2">
+            <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
             <button type="submit" class="fas fa-edit" name="update_qty"></button>
          </div>
          <div class="sub-total"> sub total : {% set sub =  prodct_arry[y]['price'] %} {{ sub }} <span>/-</span> </div>
@@ -38,13 +38,13 @@
    </div>
 
    <div class="cart-total">
-      <p>cart total : <span>{{ sub_total }}</span></p>
+      <p>cart total : <span>{{ session['sub_total'] }}</span></p>
       <a href="{{url_for('checkout_page')}}" class="btn ">proceed to checkout</a>
    </div>
 
    <div class="more-btn">
-      <form action="" method="post">
-         <button type="submit" class="delete-btn <?= ($grand_total > 1)?'':'disabled'; ?>" name="delete_all" onclick="return confirm('delete all from cart?');">delete all</button>
+      <form action="/cart" method="post">
+         <a href="{{ url_for('cart_page', delete_all = "delete" ) }}" type="submit" class="delete-btn {% if session['len_product'] == 0 %} disabled {% endif %} " name="delete_all" onclick="return confirm('delete all from cart?');">delete all</a>
       </form>
       <a href="{{url_for('menu')}}" class="btn">continue shopping</a>
    </div>

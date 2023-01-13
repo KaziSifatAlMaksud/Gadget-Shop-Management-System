@@ -9,6 +9,7 @@ mydb = myClined["gShop"]
 mycol = mydb["user"]
 shopProduct = mydb["producat"]
 contactMess = mydb["contact"]
+contactOrder = mydb['oder']
 
 
 @app.before_request
@@ -19,11 +20,16 @@ def before_request():
         g.user = session['user']
 
 
+
+
+
 @app.route("/", methods=['GET', 'POST'])
 def home_page():
     prodct_arry = []
     if 'product' not in session:
         session['product'] = []
+        session['len_product'] = 0
+        session['sub_total'] = 0
     for y in shopProduct.find():
         prodct_arry.append(y)
     l = len(prodct_arry)
@@ -55,19 +61,82 @@ def home(name):
 def about_page():
     print(session)
     return render_template('about.html')
-@app.route("/checkout")
+@app.route("/checkout",methods=["GET","POST"] )
 def checkout_page():
+    if request.method == "POST":
+        form_data = request.form
+        user_name = form_data['name']
+        user_email = form_data['email']
+        user_mobile = form_data['mobile']
+        if form_data['address'] is not None:
+            user_address = form_data['address']
+        else:
+            user_address = "None"
+        user_method = form_data['method']
+        user_oder = form_data['id']
+        user_total_price = form_data['sub-total']
+        payment_status = "uncompleted"
+        oder = {"name":user_name,"email": user_email,"mobile": user_mobile,
+                "payment_method": user_method,"address":user_address,"your_orders": user_oder,
+                "total_price": user_total_price,"payment_status": payment_status}
+        contactOrder.insert_one(oder)
+        if 'product' in session:
+            session.pop('product',None)
+            session.pop('sub_total',None)
+            return redirect(url_for('home_page'))
+    if 'user' in session:
+        user = session['user']
+        for x in mycol.find({"email": user}):
+            user_id = x['_id']
+            user_name = x['name']
+            user_mobile = x['mobile']
+            user_email = x['email']
+            if x['address'] is not None:
+                user_address = x['address']
+
+                return render_template('checkout.html', **locals())
+            else:
+                return render_template('checkout.html', **locals())
+    else:
+        return '<p>Please login first</p>'
+
+
+
     return render_template('checkout.html')
 @app.route("/cart")
 def cart_page():
+    # if request.args.get('delete') is not None:
+    #     id = request.args.get('delete')
+    #     print(id)
+    #     len_product = len(session['product'])
+    #     date_item = False
+    #     for x in range(len_product):
+    #         if session['product'][x] == id:
+    #             del session['product'][x]
+    #     print(session['product'])
+
+    # if request.args.get('delete_all') is not None:
+    #     print("clicked delte all")
+    #     request.args.get('delete+all')
+    #     return redirect(url_for('cart_page'))
+    #     for x in range(len_product):
+    #         if session['product'][x] == id:
+    #             print("sifat")
+    #             del session['product'][x]
+    #             print("valuo delete")
+    #             session.pop(session['product'][x])
+    #
+    #     return redirect(url_for('profile_page'))
     prodct_arry = []
+    session['sub_total'] = 0
     sub_total = 0
     len_product = len(session['product'])
     for y in range(len_product):
         x = shopProduct.find_one({"_id": ObjectId(session['product'][y])})
         prodct_arry.append(x)
-        sub_total = sub_total + x['price']
+        session['sub_total'] = session['sub_total'] + x['price']
     l = len(prodct_arry)
+
     return render_template('cart.html',**locals())
 
 @app.route("/order")

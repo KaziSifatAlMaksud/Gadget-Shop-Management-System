@@ -2,7 +2,7 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    
+
 {% endblock %}
 {% block content %}    
 
@@ -15,22 +15,24 @@
 
    <h1 class="title">your orders</h1>
 
-
+{% if haveoder == True %}
    <div class="box-container">
-{% for j in lists %}
+{% for i in list %}
    <div class="box">
-      <p>placed on : <span></span></p>
-      <p>name : <span>{{ j['name'] }}</span></p>
-      <p>email : <span>{{ j['email'] }}</span></p>
-      <p>number : <span>{{ j['mobile'] }}</span></p>
-      <p>address : <span>{{ j['address'] }}</span></p>
-      <p>payment method : <span>{{ j['payment_method'] }}</span></p>
-      <p>your orders : <span>{{ j['your_orders'] }}</span></p>
-      <p>total price : <span>{{ j['total_price'] }}/-</span></p>
-      <p> payment status : <span>{{ j['payment_status'] }}/-</span> </p>
+      <p>placed on : <span style="color: grey"></span></p>
+      <p>name : <span style="color: grey">{{ i['name'] }}</span></p>
+      <p>email : <span style="color: grey">{{ i['email'] }}</span></p>
+      <p>number : <span style="color: grey">{{ i['mobile'] }}</span></p>
+      <p>address : <span style="color: grey">{{ i['address'] }}</span></p>
+      <p>payment method : <span style="color: grey">{{ i['payment_method'] }}</span></p>
+      <p>your orders : <span style="color: grey">{{ i['your_orders'] }}</span></p>
+      <p>total price : <span style="color: grey">{{ i['total_price'] }}/-</span></p>
+      <p> payment status : <span style="color: grey">{{ i['payment_status'] }}</span> </p>
    </div>
-   {% endfor %}
+{% endfor %}
    </div>
+{% endif %}
+
 
 
 

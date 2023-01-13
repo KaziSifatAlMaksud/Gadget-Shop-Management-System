@@ -144,18 +144,14 @@ def cart_page():
 
     return render_template('cart.html',**locals())
 
-@app.route("/order", methods=['GET',"POST"])
+@app.route("/order",methods=['GET',"POST"])
 def order_page():
-    lists = []
+    list = []
     haveoder = False
-    for datas in contactOrder.find():
-        print(datas)
+    for data in contactOrder.find():
+        list.append(data)
         haveoder = True
-    print(lists)
-    return render_template('order.html')
-
-
-
+    return render_template('order.html', **locals())
 @app.route("/update_address",methods=['GET',"POST"])
 def update_address_page():
    if request.method == "POST":

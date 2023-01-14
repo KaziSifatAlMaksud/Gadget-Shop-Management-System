@@ -141,13 +141,15 @@ def cart_page():
 
 @app.route("/order",methods=['GET',"POST"])
 def order_page():
-    list = []
-    haveoder = False
-    for data in contactOrder.find():
-
-        if session['user'] == data['email']:
-            list.append(data)
-            haveoder = True
+    if 'user' not in session:
+        return render_template("login.html",**locals())
+    else:
+        list = []
+        haveoder = False
+        for data in contactOrder.find():
+            if session['user'] == data['email']:
+                list.append(data)
+                haveoder = True
     return render_template('order.html', **locals())
 @app.route("/update_address",methods=['GET',"POST"])
 def update_address_page():

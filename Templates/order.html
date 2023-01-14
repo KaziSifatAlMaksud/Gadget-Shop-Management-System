@@ -19,7 +19,7 @@
    <div class="box-container">
 {% for i in list %}
    <div class="box">
-      <p>placed on : <span style="color: grey"></span></p>
+      <p>placed on : <span style="color: grey">{{ i['_id'] }}</span></p>
       <p>name : <span style="color: grey">{{ i['name'] }}</span></p>
       <p>email : <span style="color: grey">{{ i['email'] }}</span></p>
       <p>number : <span style="color: grey">{{ i['mobile'] }}</span></p>

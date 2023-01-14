@@ -144,8 +144,10 @@ def order_page():
     list = []
     haveoder = False
     for data in contactOrder.find():
-        list.append(data)
-        haveoder = True
+
+        if session['user'] == data['email']:
+            list.append(data)
+            haveoder = True
     return render_template('order.html', **locals())
 @app.route("/update_address",methods=['GET',"POST"])
 def update_address_page():

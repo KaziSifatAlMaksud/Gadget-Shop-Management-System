@@ -175,13 +175,13 @@
                     <form action="/menu" method="post" class="box">
                     <input  type="hidden" name="pid" value="{{ prodct_arry[y]['_id'] }}">
                     <a class="fas fa-eye" href="{{ url_for('quick_view', id=prodct_arry[y]['_id']) }}" ></a>
-                     <button type="submit" value="" name="cart" class="fas fa-shopping-cart"></button>
-                        <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">
+                    <button type="submit" value="" name="cart" class="fas fa-shopping-cart"></button>
+                    <img src="{{ url_for('static', filename = prodct_arry[y]['image']) }}" alt="">
                   <a href="#" class="cat"></a>
                   <div class="name">{{ prodct_arry[y]['Model'] }}</div>
                   <div class="flex">
-                     <div class="price">{{ prodct_arry[y]['price'] }}<span> ৳</span></div>
-                     <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
+                      <div class="price">{{ prodct_arry[y]['price'] }}<span> ৳</span></div>
+                      <input type="number" name="qty" class="qty" min="1" max="99" value="1" maxlength="2">
                   </div>
 
                </form>

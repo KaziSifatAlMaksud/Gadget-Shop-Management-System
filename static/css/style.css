@@ -83,7 +83,7 @@ html {
 
    }
    .menu{
-      margin: 100px 0px 0px 40px;
+      margin: 100px 0px 40px 0px;
    }
    .filter_block .menu_chack{
       display: flex;

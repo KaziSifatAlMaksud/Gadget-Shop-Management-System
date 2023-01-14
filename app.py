@@ -105,36 +105,31 @@ def checkout_page():
 
 
     return render_template('checkout.html')
-@app.route("/cart")
+@app.route("/cart", methods=['GET',"POST"])
 def cart_page():
-    # if request.args.get('delete') is not None:
-    #     id = request.args.get('delete')
-    #     print(id)
-    #     len_product = len(session['product'])
-    #     date_item = False
-    #     for x in range(len_product):
-    #         if session['product'][x] == id:
-    #             del session['product'][x]
-    #     print(session['product'])
-
-    # if request.args.get('delete_all') is not None:
-    #     print("clicked delte all")
-    #     request.args.get('delete+all')
-    #     return redirect(url_for('cart_page'))
-    #     for x in range(len_product):
-    #         if session['product'][x] == id:
-    #             print("sifat")
-    #             del session['product'][x]
-    #             print("valuo delete")
-    #             session.pop(session['product'][x])
-    #
-    #     return redirect(url_for('profile_page'))
+    if request.args.get('delete') is not None:
+        id = request.args.get('delete')
+        print(id)
+        len_product = len(session['product'])
+        date_item = False
+        for x in range(len_product):
+            if session['product'][x] == id:
+                p = shopProduct.find_one({"_id": ObjectId(id)})
+                session['sub_total'] = session['sub_total'] - p['price']
+                session['len_product'] = session['len_product'] - 1
+                session['product'].pop(x)
+        return redirect(url_for('cart_page'))
+    if request.args.get('delete_all') is not None:
+        session.pop('product', None)
+        session.pop('sub_total', None)
+        session.pop('len_product', None)
+        return redirect(url_for('cart_page'))
     prodct_arry = []
     if 'product' not in session:
         session['product'] = []
         session['len_product'] = 0
         session['sub_total'] = 0
-    sub_total = 0
+    session['sub_total'] = 0
     len_product = len(session['product'])
     for y in range(len_product):
         x = shopProduct.find_one({"_id": ObjectId(session['product'][y])})
@@ -338,10 +333,7 @@ def quick_view():
     #         if session['product'][x] == id:
     #             del session['product'][x]
     #     print(session['product'])
-    # if request.args.get('delete_all') is not None:
-    #     id = request.args.get('delete+all')
-    #     session['product'] = []
-    #     return redirect(url_for('profile_page'))
+
     return render_template('quick_view.html',**locals())
 
 if __name__ == "__main__":

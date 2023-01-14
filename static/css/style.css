@@ -804,6 +804,7 @@ section {
    position: absolute;
    top: 1rem;
    right: 1rem;
+    padding-left: 1.5rem;
    background-color: var(--red);
    color: var(--white);
    border-bottom: var(--border);

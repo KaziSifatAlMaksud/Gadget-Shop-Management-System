@@ -266,35 +266,14 @@ def menu():
     for k in shopProduct.find():
         prodct_arry.append(k)
     l = len(prodct_arry)
+    cart_list = session['product']
     if request.method == "POST":
-        if request.form["btn"] == "search":
-            prodct_arry.clear()
-            if request.method == "POST":
-                form_data = request.form
-                search_value = form_data['search_box']
-                for x in shopProduct.find({"Model": search_value}):
-                    prodct_arry.append(x)
-                for x in shopProduct.find({"Type": search_value}):
-                    prodct_arry.append(x)
-                l = len(prodct_arry)
-                return render_template('menu.html', **locals())
-        elif request.form["btn"] == "eye":
-            form_data = request.form
-            prodct_model = form_data['pid']
-            x = shopProduct.find_one({"Model": prodct_model})
-            if x is not None:
-                p_type = x["Type"]
-                p_price = x["price"]
-                p_model = x["Model"]
-                p_processor = x["Processor"]
-                p_display = x["Display"]
-                p_ram = x["Ram"]
-                p_feat = x["Features"]
-                p_warrant = x["Warranty"]
-                p_image = x["image"]
-                p_descript = x["Description"]
-                print(p_display)
-                return render_template('quick_view.html', **locals())
+        form_data = request.form
+        pr_model = form_data['pid']
+        cart_list.append(pr_model)
+        session['product'] = cart_list
+        print(session)
+        session['len_product'] = len(session['product'])
     return render_template('menu.html',**locals())
 @app.route("/search",methods=["GET","POST"])
 def search():

@@ -309,15 +309,7 @@ def quick_view():
         p_warrant = x["Warranty"]
         p_image = x["image"]
         p_descript = x["Description"]
-    # if request.args.get('delete') is not None:
-    #     id = request.args.get('delete')
-    #     print(id)
-    #     len_product = len(session['product'])
-    #     date_item = False
-    #     for x in range(len_product):
-    #         if session['product'][x] == id:
-    #             del session['product'][x]
-    #     print(session['product'])
+
 
     return render_template('quick_view.html',**locals())
 

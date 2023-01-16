@@ -52,15 +52,17 @@ Gadget Shop Management System, a gadget shop that offers online order services, 
 ![image](https://user-images.githubusercontent.com/65750595/212753122-df3d11bb-2d03-45e2-a49e-dc2f682841a2.png)
 ## Menu Page
 ![image](https://user-images.githubusercontent.com/65750595/212753205-983b1035-32bc-4634-b1f1-9f16f8bd2507.png)
-##Quick View Page
+## Quick View Page
 ![image](https://user-images.githubusercontent.com/65750595/212753305-d808e25f-7069-4de3-a74d-a64ef27b1b87.png)
-##product Search
+## product Search
 ![image](https://user-images.githubusercontent.com/65750595/212753506-cf478f3b-4c12-440e-9666-b523ab78de12.png)
-##Shopping Cart Page
+## Shopping Cart Page
 ![image](https://user-images.githubusercontent.com/65750595/212753653-090dccc7-c3e9-4885-aeec-28f6e9e58353.png)
 ## Checkout Order Summary Page
 ![image](https://user-images.githubusercontent.com/65750595/212753736-a6fb527d-7954-4e30-97ca-71a9a69dd0b9.png)
-#Admin Panal
+
+# Admin Panal
+
 ## Admin Log in Page
 ![image](https://user-images.githubusercontent.com/65750595/212753896-711ef4d0-f235-422a-96ef-4a0b0b04c150.png)
 ## Dashboard Page

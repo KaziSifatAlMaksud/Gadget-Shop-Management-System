@@ -1,9 +1,48 @@
 {% extends "admin_base.html" %}
-{% block title %}View Product{% endblock %}
+{% block title %}View messages{% endblock %}
 {% block head %}
     {{ super() }}
    
 {% endblock %}
-{% body content %}
+{% block body %}
 
+
+{% if havemess == True %}
+    <h1 style="text-align: center;" class="display-4">View All Messagess</h1>
+
+
+    <table class="table table-bordered table-dark container-sm">
+  <thead>
+   <tr class="bg-primary">
+       <th>User Name: </th>
+        <th>Email:</th>
+       <th>Message:</th>
+       <th>Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+       {% for i in list %}
+            <tr>
+                <td>
+                    {{ i['name'] }}
+                </td>
+                <td>
+                    <p>{{ i['email'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['message'] }}</p>
+                </td>
+                <td>
+                    <a  class="btn btn-primary" href="#">Edit</a></br></br>
+                 <a  class="btn btn-outline-primary" href="{{ url_for('messages', id=i['_id']) }}">Delete</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+{% endif %}
+
+
+  </tbody>
+</table>
 {% endblock %}

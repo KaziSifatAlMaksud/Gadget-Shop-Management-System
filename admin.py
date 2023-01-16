@@ -106,8 +106,16 @@ def products():  # put application's code here
         result = "Insert Successfully"
         print(result)
     return render_template("products.html",**locals())
-@app.route('/messages')
-def messages():  # put application's code here
+@app.route('/messages', methods=["GET","POST"])
+def messages():
+    if request.args.get('id') is not None:
+        id = request.args.get('id')
+        contactMess.delete_one({'_id': ObjectId(id)})
+    list = []
+    havemess = False
+    for data in contactMess.find():
+        list.append(data)
+        havemess = True
     return render_template("messages.html",**locals())
 @app.route('/user')
 def user():  # put application's code here

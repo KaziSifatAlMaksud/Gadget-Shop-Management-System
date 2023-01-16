@@ -255,6 +255,7 @@ def register():
 def contact():
     cont_d = {}
     if request.method == "POST":
+        print("fadsfjiajdif")
         form_data = request.form
         cont_name = form_data["name"]
         cont_email = form_data["email"]
@@ -263,9 +264,8 @@ def contact():
         cont_d["email"] = cont_email
         cont_d["message"] = cont_mess
         contactMess.insert_one(cont_d)
-        sucessmess = "Register Successfully"
-        print(sucessmess)
-    return render_template('contact.html')
+        sucessmess = "Sucessefull Send the message."
+    return render_template('contact.html',**locals())
 @app.route("/menu", methods=["GET","POST"])
 def menu():
     prodct_arry = []

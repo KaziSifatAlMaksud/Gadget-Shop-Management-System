@@ -1,0 +1,168 @@
+{% extends "admin_base.html" %}
+{% block title %}View Product{% endblock %}
+{% block head %}
+    {{ super() }}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+{% endblock %}
+{% block body %}
+     <section class="dashboard">
+                <h1 class="display-5 mb-4 text-justify" style="color: white;text-align: center">Dashboard</h1>
+
+                <div class="cardBox">
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers"><span>0</span><span>/-</span></div>
+                            <div class="cardName">total pendings</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="pending_orders.php">
+                                <ion-icon name="wallet-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers"><span>{{total_amount}}</span><span>/-</span></div>
+                            <div class="cardName">total completes</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="completed_orders.php" class="ho">
+                                <ion-icon name="wallet-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers">{{o_l}}</div>
+                            <div class="cardName">total orders</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="placed_orders.php">
+                                <ion-icon name="wallet-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers">{{p_l}}</div>
+                            <div class="cardName">products added</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="products.php">
+                                <ion-icon name="grid-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers">{{u_l}}</div>
+                            <div class="cardName">users accounts</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="numbers_of_users.php">
+                                <ion-icon name="people-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers">{{a_l}}</div>
+                            <div class="cardName">admin accounts</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="admin_accounts.php">
+                                <ion-icon name="accessibility-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div>
+                            <div class="numbers">{{m_l}}</div>
+                            <div class="cardName">new messages</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <a href="messages.php">
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="heading" style="text-align: center; color: white">----------------------------------------</h1>
+                <h1 class="heading" style="text-align: center;color: white"">-----------</h1>
+
+                <div class="cardBox">
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1,504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">80</div>
+                            <div class="cardName">Sales</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">284</div>
+                            <div class="cardName">Rating</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">$7,842</div>
+                            <div class="cardName">Earning</div>
+                        </div>
+
+                        <div class="iconBx">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    </div>
+
+{% endblock %}
+

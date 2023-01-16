@@ -1,0 +1,88 @@
+{% extends "admin_base.html" %}
+{% block title %}View Product{% endblock %}
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+{% block body%}
+
+<div class="container text-light bg-dark" style="width: 40%; border-radius: 5%; padding: 80px; margin-top: 3%;">
+      <h1 class="display-5 mb-4 text-justify">Add Product</h1>
+    <form action="/products" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Product Type</label>
+      <select name="type"  class="form-control" value="p_type"required>
+         <option value="" disabled selected>-- Select Type --</option>
+         <option value="Smart_Watch">Smart Watch</option>
+         <option value="Laptop">Laptop</option>
+         <option value="Desktop">Desktop</option>
+         <option value="Router">Router</option>
+          <option value="Headphones">Headphones</option>
+          <option value="Gaming">Gaming Consoles</option>
+          <option value="Other">Others Accessories</option>
+      </select>
+
+    <div class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Price</label>
+    <input type="number" class="form-control" name="price" value="{{p_price}}" required>
+    <div class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Model</label>
+    <input type="text" class="form-control" value="{{p_model}}" name="model" required>
+    <div id="emailHelp" class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Prosessor</label>
+    <input type="text" class="form-control" value="{{p_prose}}" name="prosesor" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Display</label>
+    <input type="text" class="form-control" value="{{p_display}}" name="display" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div><div class="mb-3">
+    <label class="form-label">Product Ram</label>
+    <input type="text" class="form-control" value="{{p_ram}}" name="ram" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div><div class="mb-3">
+    <label class="form-label">Product Graphics</label>
+    <input type="text" class="form-control" value="{{p_graphics}}" name="graphics" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div><div class="mb-3">
+    <label class="form-label">Product Features</label>
+    <input type="text" class="form-control" value="{{p_features}}" name="features" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Warranty</label>
+    <input type="text" class="form-control" value="{{p_warranty}}" name="warranty" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Image Path</label>
+            <input type="file" class="form-control" value="{{image}}" name="file" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Product Description</label>
+    <input type="text" class="form-control" value="{{p_description}}" name="discrption" required>
+    <div  class="form-text" style="color: red">{{ email_mess }}</div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Add Product</button>
+
+        <a class="btn btn-primary" href="/view_product">View All Product</a></button>
+         {% if isPost == True %}
+         <h3 >{{ result }}</h3>
+      {% endif %}
+     </br>
+         </br>
+
+</form>
+  </div>
+{% endblock %}
+

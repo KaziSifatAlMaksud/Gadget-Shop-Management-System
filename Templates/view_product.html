@@ -1,0 +1,62 @@
+{% extends "admin_base.html" %}
+{% block title %}View Product{% endblock %}
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+{% block nav%} {% endblock %}
+
+{% block body %}
+
+{% if haveuser == True %}
+    <h1 style="text-align: center;" class="display-4">View Product</h1>
+
+
+    <table class="table table-bordered table-dark container-sm">
+  <thead>
+   <tr class="bg-primary">
+       <th>Type:</th>
+       <th>Model:</th>
+       <th>Price:</th>
+       <th>Warranty:</th>
+       <th>image:</th>
+       <th>Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+       {% for i in list %}
+            <tr>
+                <td>
+                    {{ i['Type'] }}
+                </td>
+                <td>
+                    <p>{{ i['Model'] }}</p>
+                </td>
+
+
+                <td>
+                    <p>{{ i['price'] }}</p>
+                </td>
+
+                <td>
+                    <p>{{ i['Warranty'] }}</p>
+                </td>
+                <td>
+                    <img style="align-items: center;" src="{{url_for('static', filename= i["image"] )}}" alt="..."width="65" height="60">
+                </td>
+                <td><a class="btn btn-primary"  href="{{ url_for('products', update_p=i['_id']) }}">Edit</a>
+            <br>
+            <br> <a  class="btn btn-outline-primary" href="{{ url_for('view_product', id=i['_id']) }}">Delete</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+{% endif %}
+
+
+  </tbody>
+</table>
+{% endblock %}
+
+

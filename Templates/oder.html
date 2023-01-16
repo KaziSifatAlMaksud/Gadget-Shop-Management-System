@@ -1,0 +1,74 @@
+{% extends "admin_base.html" %}
+{% block title %}View User{% endblock %}
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+{% block nav%} {% endblock %}
+{% block body %}
+
+
+
+{% if haveoder == True %}
+    <h1 style="text-align: center;" class="display-4">View Orders</h1>
+
+
+    <table class="table table-bordered table-dark container-sm">
+  <thead>
+  <tr class="bg-primary">
+       <th>Name:</th>
+       <th>Email:</th>
+       <th>Mobile:</th>
+       <th>Payment Me.:</th>
+       <th>Address</th>
+       <th>Your Orders:</th>
+       <th>Total Price:</th>
+       <th>Payment Status:</th>
+       <th> Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+       {% for i in list %}
+            <tr>
+                <td>
+                    {{ i['name'] }}
+                </td>
+                <td>
+                    <p>{{ i['email'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['mobile'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['payment_method'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['address'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['your_orders'] }}</p>
+                </td>
+
+                <td>
+                    <p>{{ i['total_price'] }}</p>
+                </td>
+                <td>
+                    <p>{{ i['payment_status'] }}</p>
+                     <a class="btn {% if i['payment_status'] == 'Completed' %}btn-success{% endif %} {% if i['payment_status'] == 'uncompleted' %}btn-danger{% endif %}" href="{{ url_for('update_payment', id=i['_id']) }}">Update Status</a>
+                </td>
+
+                <td>
+                 <a  class="btn btn-primary" href="#">Edit</a></br></br>
+                 <a  class="btn btn-outline-primary" href="{{ url_for('user', id=i['_id']) }}">Delete</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+{% endif %}
+
+
+  </tbody>
+</table>
+{% endblock %}
+

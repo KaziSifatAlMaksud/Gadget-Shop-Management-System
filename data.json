@@ -1,0 +1,101 @@
+[
+    
+    {
+        "Type": "Laptop",
+        "price": 96000,
+        "Model": "Victus 16-e0890AX ",
+        "Processor": "AMD Ryzen 7 5800H (16M Cache, 3.2 GHz up to 4.4 GHz)",
+        "Display": "IPS, 16.1 Inch",
+        "Ram": "16GB DDR4, Storage: 1TB SSD",
+        "Graphics": "RTX 3050 4GB GDDR6",
+        "Features": " Backlit Keyboard",
+        "Warranty": "1 year",
+        "image": "images/1_laptop_hp.jpg",
+        "Description": "HP Victus 16-e0890AX Gaming Laptop comes with AMD Ryzen 7 5800H Processor(16M Cache, 3.2 GHz up to 4.4 GHz), 16.1 FHD Antiglare IPS 250 nits 144Hz Narrow Border flat display, 8GB DDR4-3200 MHz RAM, 512GB PCIe NVMe TLC M.2 SSD, NVIDIA GeForce RTX 3050 4GB Graphics, AMD Integrated SoC and Windows 10 Home 64 Operating System. This gaming laptop featured with 4-cell, 70 Wh Li-ion polymer, 200 W Smart AC power adapter, Audio by B&O; Dual speakers; HP Audio Boost. Here, 1 SuperSpeed USB Type-C 5Gbps signaling rate (DisplayPort 1.4, HP Sleep and Charge); 1 SuperSpeed USB Type-A 5Gbps signaling rate (HP Sleep and Charge); 2 SuperSpeed USB Type-A 5Gbps signaling rate, HDMI 2.1 x 1, 1 x headphone/microphone combo Ports, Connectors & Slots are also available. This new HP Victus 16-e0890AX has Integrated 10/100/1000 GbE LAN, Realtek Wi-Fi CERTIFIED 6 (2x2) and Bluetooth 5.2 Network & Wireless Connectivity. The latest HP Victus 16-e0890AX Ryzen 7 5800H RTX 3050 4GB Graphics 16.1 FHD Gaming Laptop has 1 Year Limited Warranty (Terms & Conditions Apply As Per HP)."
+      },
+      {
+        
+        "Type": "Laptop",
+        "price": 97000,
+        "Model": "Victus 16-d0445TX",
+        "Processor": "Intel Core i7-11800H (24M Cache, 2.30 GHz up to 4.60 GHz)",
+        "Display": "IPS, 16.1 Inch",
+        "Ram": "16GB DDR4, Storage: 512GB SSD",
+        "Graphics": "RTX 3050 4GB GDDR6",
+        "Features": "Backlit keyboard, 144Hz 7ms display",
+        "Warranty": "1 year",
+        "image": "images/2_laptop_hp.jpg",
+        "Description": "he HP Victus 16-d0445TX Gaming Laptop comes with Intel Core i7-11800H Processor (24M Cache, 2.30 GHz up to 4.60 GHz) and 16 GB DDR4-3200 MHz RAM. It comes with a 512 GB PCIe NVMe TLC M.2 SSD. The HP Victus 16-d0445TX is integrated with an NVIDIA GeForce RTX 3050 4GB GDDR6 graphics and comes with a 16.1 diagonal, FHD (1920 x 1080), 144 Hz, 7 ms response time, IPS, micro-edge, anti-glare, Low Blue Light, 300 nits, 100% sRGB display. This laptop runs on the latest Windows 11 Home 64 Operating System. This gaming laptop is powered by a 4-cell, 70 Wh Li-ion polymer battery and has a 200 W Smart AC power adapter. It features Audio by B&O; Dual speakers; HP Audio Boost and an HP Wide Vision 720p HD camera with integrated dual array digital microphones. This laptop is designed with 1 SuperSpeed USB Type-C 5Gbps signaling rate (DisplayPort 1.4, HP Sleep and Charge); 1 SuperSpeed USB Type-A 5Gbps signaling rate (HP Sleep and Charge); 2 SuperSpeed USB Type-A 5Gbps signaling rate; 1 HDMI 2.1; 1 RJ-45; 1 AC smart pin; 1 headphone/microphone combo. The HP Victus 16-d0445TX has been Integrated with 10/100/1000 GbE LAN, Realtek Wi-Fi 6 (2x2), and Bluetooth 5.2 combo (Supporting Gigabit data rate) Wireless Connectivity. The HP Victus 16-d0445TX Gaming Laptop has 2 Year Limited Warranty (Terms & Conditions Apply As Per HP)."
+      },
+    {
+"Type": "Desktop",
+"price": 86400,
+"Model": "Intel 11th Gen Gaming PC",
+"Processor": "Intel 11th Gen Core i5-11400F Rocket Lake Processor",
+"Motherboard": "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboar",
+"Display": " ",
+"Ram": "Kingston 16GB DDR4 3200MHz RAM + 128GB M.2 PCIe SSD + Seagate 1TB HDD",
+"Graphics": "ASUS Phoenix GeForce GTX 1650 4GB GDDR5 Graphics Card",
+"Features": "Not given",
+"Casing": "MaxGreen A361 RGB Mid Tower Case",
+"Warranty": "1.5 year",
+"image": "images/27_Desktop.jpg",
+ "Description":  "This Intel 11th Gen Gaming PC is powered by an Intel Core i5-11400F Rocket Lake Processor. It has a base frequency of 2.60 GHz that can be reached as a max turbo frequency at 4.40 GHz. It has a SmartCache of 12 MB containing 6 cores and 12 threads. It comes with the ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard. The Corsair H100 RGB 240mm Liquid CPU Cooler has been used here to keep the CPU cool for the best gaming performance. This PC comes with Kingston FURY Beast 16GB 3200MHz DDR4 Desktop RAM installed with it. The RAM  comes with 16GB capacity, DDR4 memory type, 3200 MHz frequency, 25,600 MB/s (PC4 25600) Bandwidth, and 1.2V voltage. It has a CL16-20-20-40 Latency. This Gaming PC also has Team MP33 128GB M.2 PCIe SSD & Seagate Internal 1TB SATA Barracuda HDD for ultimate performance. It uses high-speed PCIe Gen3 x 4 interfaces and complies with the NVMe 1.3 standard. With 3D and flash memory, it is a great bargain and the performance is excellent. The maximum read/write speed of MP33 M.2 PCIe Solid State Drive is 1,500/500MB/s, which is three times faster than the SATA 6GB/s interface. MP33 M.2 PCIe Solid State Drive supports S.M.A.R.T function and its built-in smart algorithm management mechanism has functions such as GC (garbage collection) and TRIM command which can ensure operation efficiency, enhance the service life of the solid-state drive and bring it to its maximum performance. The ASUS Phoenix GeForce GTX 1650 4GB GDDR5 Graphics Card brings you better performance and thermal solutions. It's powered by NVIDIA Pascal - the most advanced GPU architecture ever created. To fulfill the power requirements of the whole system this PC comes with Corsair CX-M Series CX550M 550W 80 PLUS Bronze Semi-Modular ATX Power Supply. It features 80 PLUS BRONZE certification and a quiet 120 mm fan. The CircuitShield suite of industrial-grade protections ensures that the power delivered to your system is safe and reliable in any environment. All these special features come bundled inside an Xtreme XJOGOS 200-12 RGB Mid Tower Black ATX Gaming Casing. This can be your perfect choice for ensuring a best-in-class gaming experience."
+},
+{
+"Type": "Desktop",
+"price": 103600,
+"Model": "Intel 10th Gen Core i7-10700 Gaming PC",
+"Processor": "Intel 10th Gen Core i7-10700 Processor",
+"Motherboard": "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard",
+"Display": "None",
+"Ram": "16GB RAM + 1TB HDD + 256GB SSD",
+"Graphics": "None",
+"Features": "None",
+"Casing": "MaxGreen A361 RGB Mid Tower Case",
+"Warranty": "1.5 year",
+"image": "images/28_Desktop.jpg",
+ "Description":  "The latest price of Intel 10th Gen i7-10700 Gaming PC in Bangladesh is 103,600৳. You can buy the Intel 10th Gen i7-10700 Gaming PC at best price from our website or visit any of our showrooms."
+
+},
+
+
+
+{
+
+  "Type": "Smart Watch",
+  "price": 20000,
+  "Model": "Apple Watch Series 7",
+  "Processor": "S7 SiP with 64-bit dual-core processor",
+  "Display": "Always-On Retina LTPO OLED display, 1,000 nits",
+  "Ram": "32GB capacity",
+  "Features": "Blood Oxygen app & ECG app",
+  "Warranty": "No warranty",
+  "image": "images/17_Smart_Watch.jpg",
+   "Description":  "The Apple Watch Series 7 45mm Sports Band comes with the largest, most advanced display yet. It comes with an always-On Retina LTPO OLED display, 1,000 nits brightness. Here, the display is Crack Resistant, Dust Resistant (IP6X), and Swimproof with WR50 water resistance. Series 7 puts more health insights in sight. You can measure your blood oxygen level with a revolutionary sensor and app. This new Apple Watch Series 7 featured with Digital Crown with haptic feedback, High and low heart rate notifications, Irregular heart rhythm notification ECG app, International emergency callingâ�· Emergency SOS, Fall detection, Swimproof (water resistant 50 meters), Dust resistant (IP6X), Most crack-resistant front crystal, Compass and Always-on altimeter. Apple Watch Series 7 is capable of generating an ECG similar to a single-lead electrocardiogram. Along with other innovations like mindfulness and sleep tracking to keep you healthy from head to toe. And also you can understand how well your body is absorbing oxygen and the amount of oxygen delivered to your body with the Blood Oxygen app with this Apple Smart Watch. The entire charging system for Apple Watch Series 7 has been rethought to get you up and running faster than ever. With an updated charging architecture and fast-charging USB-C cable, it takes about 45 minutes to go from 0 to 80% charge. The Apple Watch Series 7 45mm comes with no warranty."
+  
+},
+{
+  "Type": "Smart Watch",
+  "price": 19300,
+  "Model": " Apple Watch Series 7 Nike Edition",
+  "Processor": "S7 SiP with 64-bit dual-core processor",
+  "Display": "Always-On Retina LTPO OLED display, 1,000 nits",
+  "Ram": "32GB capacity",
+  "Features": "Blood Oxygen app & ECG app",
+  "Warranty": "No warranty",
+  "image": "images/18_Smart_Watch.jpg",
+   "Description": "The Apple Watch Series 7 45mm Nike Sports Band features the largest, most advanced display yet. It comes with an always-On Retina LTPO OLED display, 1,000 nits brightness. The display is Crack Resistant, Dust Resistant (IP6X), and Swimproof with WR50 water resistance. Series 7 puts more health insights in sight. You can measure your blood oxygen level with a revolutionary sensor and app. Apple Watch Series 7 Nike Edition is capable of generating an ECG similar to a single-lead electrocardiogram. Along with other innovations like mindfulness and sleep tracking to keep you healthy from head to toe.  It can help you understand how well your body is absorbing oxygen and the amount of oxygen delivered to your body with the Blood Oxygen app. The entire charging system for Apple Watch Series 7 Nike Edition has been rethought to get you up and running faster than ever. With an updated charging architecture and fast-charging USB-C cable, it takes about 45 minutes to go from 0 to 80% charge. The Apple Watch Series 7 Nike Edition comes with no warranty."
+  
+}]
+
+
+
+{
+  
+}
+
+
+
+
+]

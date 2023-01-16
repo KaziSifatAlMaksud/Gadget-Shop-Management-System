@@ -1,0 +1,42 @@
+{% extends "admin_base.html" %}
+{% block title %}View Product{% endblock %}
+{% block head %}
+    {{ super() }}
+
+{% endblock %}
+{% block body %}
+
+
+  <div class="container text-light bg-dark" style="width: 40%; border-radius: 5%; padding: 80px; margin-top: 3%;">
+      <h1 class="display-5 mb-4 text-justify">Admin SingUp</h1>
+      <form action="/admin_add" method="post">
+  <div class="mb-3">
+    <label class="form-label">User Name: </label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    <div hidden class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+        <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address:</label>
+    <input type="email" class="form-control" name="email">
+  </div>
+
+           <div class="mb-3">
+    <label  class="form-label">Password: </label>
+    <input type="password" class="form-control" name="password">
+     <div  class="form-text" style="color: red">{{ passmess }}</div>
+           </div>
+            <div class="mb-3">
+    <label  class="form-label">Re-enter Password: </label>
+    <input type="password" class="form-control" name="re_password">
+    <div  class="form-text" style="color: red">{{ passmess }}</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+          </br>
+          </br>
+          <h6 class="mb-4 d-1"> Already Have Account: <a href="{{url_for('admin_login')}}"> Log In</a></h6>
+</form>
+
+  </div>
+
+  {% endblock %}

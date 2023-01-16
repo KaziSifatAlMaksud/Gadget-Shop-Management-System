@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, url_for, redirect, session
 import pymongo
 from bson.objectid import ObjectId
 from flask import *
+
+
 app = Flask(__name__)
 app.secret_key = "sifat"
 myClined = pymongo.MongoClient("mongodb://localhost:27017/gShop")

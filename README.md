@@ -31,7 +31,7 @@ Gadget Shop Management System, a gadget shop that offers online order services, 
 6. Manage Accounts 
 7. Create Account 
 
-#Technology:
+# Technology:
 1. HTML 
 2. CSS 
 3. Javascript 
